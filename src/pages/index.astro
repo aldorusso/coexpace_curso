@@ -1,110 +1,645 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
-import Hero from '../components/Hero.astro';
-import SocialProof from '../components/SocialProof.astro';
-import ProblemSolution from '../components/ProblemSolution.astro';
-import Transformation from '../components/Transformation.astro';
-import Testimonials from '../components/Testimonials.astro';
-import Program from '../components/Program.astro';
-import Instructor from '../components/Instructor.astro';
-import Bonuses from '../components/Bonuses.astro';
-import Steps from '../components/Steps.astro';
-import Pricing from '../components/Pricing.astro';
-import FAQ from '../components/FAQ.astro';
-import LanguageFloater from '../components/LanguageFloater.astro';
+
+const modules = [
+  { order: 1, title: "Introducción y Fundamentos", description: "Comenzamos por entender dónde estás hoy...", body: "Comenzamos por entender dónde estás hoy y por qué tu mente no se detiene.\nEjercicios prácticos para empezar a notar tus patrones automáticos.\nDa el primer paso hacia la presencia consciente." },
+  { order: 2, title: "Postura, Respiración y Actitud", description: "Los cimientos de tu práctica.", body: "Aprende a usar tu cuerpo y respiración para establecer una base sólida.\nDescubre los tres pilares de una práctica de meditación diaria sostenible.\nCalibra tu mentalidad para una transformación duradera." },
+  { order: 3, title: "Neurociencia y Meditación", description: "Cómo cambia tu cerebro.", body: "Descubre exactamente qué pasa en tu cerebro y sistema nervioso cuando meditas.\nAprende a reprogramar tus respuestas al estrés con técnicas basadas en ciencia.\nEntiende la neuroplasticidad y por qué la repetición es tu superpoder." },
+  { order: 4, title: "Respiración y Presencia", description: "Anclándote al ahora.", body: "Técnicas de respiración profunda diseñadas para devolverte rápidamente al presente.\nCuando la vida se vuelva abrumadora, usa tu respiración como ancla.\nPractica la presencia aplicada en medio de tus momentos más ocupados." },
+  { order: 5, title: "Pensamientos", description: "Desconectando del ruido.", body: "No eres tus pensamientos. Aprende a observarlos sin juzgar.\nLibérate de los bucles mentales que agotan tu energía cada día.\nPractica el arte de la distancia cognitiva y la claridad mental." },
+  { order: 6, title: "Emociones", description: "Sentir sin reaccionar.", body: "Navega las emociones intensas con técnicas de equilibrio y regulación emocional.\nAprende la diferencia entre reaccionar y responder desde la calma.\nConstruye tu vocabulario emocional y tu músculo de resiliencia interior." },
+  { order: 7, title: "Hábitos e Inteligencia del Corazón", description: "Creando un estilo de vida sostenible.", body: "Integra estas prácticas en tu rutina diaria sin problemas.\nConstruye resiliencia y coherencia corazón-cerebro para un bienestar a largo plazo.\nDiseña tu propio ritual sostenible que realmente se adapte a tu vida." },
+  { order: 8, title: "29 Meditaciones Guiadas", description: "Tu kit de herramientas diario.", body: "Acceso a 29 meditaciones guiadas diseñadas específicamente para cada momento.\nMeditaciones para la ansiedad, el sueño, el enfoque y la regulación emocional.\nTu calma portátil — disponible desde cualquier dispositivo, en cualquier momento." },
+];
+
+const faqs = [
+  { question: "¿Cuánto tiempo necesito al día?", answer: "Con solo 10 a 15 minutos al día, puedes empezar a notar cambios reales en tu claridad mental y reducción de la ansiedad." },
+  { question: "¿Necesito experiencia previa en meditación?", answer: "No, en absoluto. El Método Mayim está diseñado desde cero. Aprenderás las bases y avanzarás paso a paso." },
+  { question: "¿Cómo accedo al material?", answer: "Obtienes acceso inmediato a nuestra plataforma Coexpace LMS al inscribirte. Puedes iniciar sesión desde cualquier dispositivo." },
+  { question: "¿El curso caduca?", answer: "¡Tendrás acceso de por vida! Practica a tu propio ritmo, donde y cuando quieras." },
+];
 ---
 
 <Layout title="Meditación y Mindfulness para la Vida Diaria | COEXPACE">
-    <Navbar />
-    <LanguageFloater />
-	<main>
-		<Hero />
-		<SocialProof />
-        <Testimonials />
-		<ProblemSolution />
-		<Transformation />
-        <Program />
-        <Instructor />
-        <Bonuses />
-        <Steps />
-        <Pricing />
-    <footer class="bg-white py-5 border-top" style="border-color: rgba(217, 119, 6, 0.1) !important;">
-       <div class="container py-4">
-         <div class="row gy-5">
-           <!-- About Column -->
-           <div class="col-lg-5 col-md-12 pe-lg-5 reveal">
-             <h4 class="mb-3 text-dark text-uppercase tracking-wide" style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; letter-spacing: 4px;">COEXPACE</h4>
-             <div class="mt-2 mb-4" style="width: 40px; height: 1px; background-color: #d97706;"></div>
-             <p class="text-muted fw-light lh-lg mb-3" style="font-size: 0.95rem;">
-               COEXPACE es una iniciativa global que activa la empatía, el coraje moral y la convivencia a través del storytelling inmersivo, la educación y la acción cívica.
-             </p>
-             <p class="text-muted fw-light lh-lg mb-0" style="font-size: 0.95rem;">
-               Creamos experiencias transformadoras que desafían supuestos, generan diálogo crítico y ayudan a las personas a actuar con integridad.
-             </p>
-           </div>
+  <Navbar />
 
-           <!-- Links Column -->
-           <div class="col-lg-3 col-md-6 reveal" style="transition-delay: 100ms">
-             <h5 class="mb-4 text-dark text-uppercase tracking-wide" style="font-size: 0.9rem; letter-spacing: 2px;">Explorar</h5>
-             <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
-               <li><a href="https://coexpace.org/" class="text-muted text-decoration-none fw-light footer-link">Inicio</a></li>
-               <li><a href="https://coexpace.org/about-us" class="text-muted text-decoration-none fw-light footer-link">Sobre Nosotros</a></li>
-               <li><a href="https://coexpace.org/coexpace-center" class="text-muted text-decoration-none fw-light footer-link">COEXPACE Center</a></li>
-               <li><a href="https://coexpace.org/events" class="text-muted text-decoration-none fw-light footer-link">Cumbres y Exposiciones</a></li>
-             </ul>
-           </div>
+  <!-- Language Floater: shows ESP flag to go back to Spanish -->
+  <a href="/en" title="Switch to English" aria-label="Switch to English" style="position:fixed;right:24px;bottom:32px;z-index:99999;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,0.10);box-shadow:0 4px 20px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:transform 0.25s ease,box-shadow 0.25s ease;text-decoration:none;" onmouseenter="this.style.transform='scale(1.12) translateY(-3px)';this.style.boxShadow='0 8px 30px rgba(0,0,0,0.2)';" onmouseleave="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.15)';">
+    <img src="https://flagcdn.com/w80/us.png" alt="English" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" />
+  </a>
 
-           <!-- Contact Column -->
-           <div class="col-lg-4 col-md-6 reveal" style="transition-delay: 200ms">
-             <h5 class="mb-4 text-dark text-uppercase tracking-wide" style="font-size: 0.9rem; letter-spacing: 2px;">Contacto</h5>
-             <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
-               <li class="d-flex align-items-center">
-                 <span class="text-muted fw-light">Miami, Florida</span>
-               </li>
-               <li class="d-flex align-items-center">
-                 <a href="mailto:contact@coexpace.org" class="text-muted text-decoration-none fw-light footer-link">contact@coexpace.org</a>
-               </li>
-             </ul>
-             
-             <h5 class="mb-3 text-dark text-uppercase tracking-wide mt-4 pt-2" style="font-size: 0.85rem; letter-spacing: 2px;">Síguenos</h5>
-             <div class="d-flex gap-3">
-               <a href="https://instagram.com/coexpace" target="_blank" class="social-icon text-muted text-decoration-none transition" aria-label="Instagram">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.036 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
-               </a>
-               <a href="https://linkedin.com/company/coexpace" target="_blank" class="social-icon text-muted text-decoration-none transition" aria-label="LinkedIn">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S1.2 3.226 1.2 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
-               </a>
-               <a href="https://facebook.com/coexpace" target="_blank" class="social-icon text-muted text-decoration-none transition" aria-label="Facebook">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg>
-               </a>
-             </div>
-           </div>
-         </div>
-         
-         <div class="pt-4 mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center" style="border-top: 1px solid rgba(0,0,0,0.05);">
-            <p class="mb-0 text-muted small fw-light text-uppercase tracking-wide" style="letter-spacing: 1.5px; font-size: 0.75rem;">© {new Date().getFullYear()} COEXPACE. Todos los Derechos Reservados.</p>
-            <div class="d-flex gap-4 mt-3 mt-md-0">
-              <a href="https://coexpace.org/privacy-policy" class="text-muted small text-decoration-none fw-light footer-link">Política de Privacidad</a>
-              <a href="https://coexpace.org/terms-and-conditions" class="text-muted small text-decoration-none fw-light footer-link">Términos y Condiciones</a>
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-en" id="hero">
+      <div class="hero-bg-en"></div>
+      <div class="container position-relative z-2 reveal text-center">
+        <span class="badge-pill-en">Edición Masterclass</span>
+        <h1 class="hero-title-en">Encuentra tu <em class="text-amber">Calma</em><br/>en el Caos</h1>
+        <p class="hero-sub-en">Un sistema premium diseñado para mujeres que compaginan el trabajo, la familia y la ansiedad. Deja de vivir en piloto automático y recupera tu claridad hoy.</p>
+        <div class="d-flex flex-column align-items-center">
+          <a href="#checkout" class="btn-amber-en mb-4">Inscríbete Ahora</a>
+          <p class="small text-muted" style="letter-spacing:1px;"><span class="text-amber">★</span> Únete a cientos de mujeres que ya están transformando sus vidas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOCIAL PROOF ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-4 reveal">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:#1c1917;">Por Qué Este Curso<br><em class="text-amber">Es Diferente</em></h2>
+            <div style="width:40px;height:1px;background:#d97706;margin:1.2rem 0 1.5rem;"></div>
+            <p style="font-family:'Inter',sans-serif;color:#78716c;font-size:1.1rem;line-height:1.8;font-weight:300;">Este no es un curso para aprender a meditar. Es un sistema para dejar de vivir en piloto automático, incluso cuando la vida no se detiene.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-4 text-center">
+              {[["7","Módulos","de transformación"],["14","Cuadernos","aplicación en el mundo real"],["29","Audios","meditaciones guiadas"]].map(([num,label,sub]) => (
+                <div class="col-sm-4">
+                  <div class="light-panel p-4 h-100 bg-white shadow-sm" style="border-top:2px solid rgba(217,119,6,0.4);border:1px solid #e7e5e4;border-radius:4px;">
+                    <span class="d-block display-3 text-dark mb-2" style="font-family:'Cormorant Garamond',serif;">{num}</span>
+                    <strong class="d-block fs-6 text-amber text-uppercase" style="letter-spacing:1px;">{label}</strong>
+                    <span class="text-muted small fst-italic">{sub}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-         </div>
-       </div>
-    </footer>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-5 reveal">
+        <div class="text-center mb-5">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:400;color:#1c1917;">Mujeres Reales. Transformaciones Reales.</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-7">
+            <div class="p-5 position-relative bg-white shadow-sm text-center" style="border-radius:1rem;border:1px solid #e7e5e4;">
+              <div style="position:absolute;top:10px;right:30px;font-family:'Cormorant Garamond',serif;font-size:6rem;color:#d97706;opacity:0.2;line-height:1;">"</div>
+              <div class="d-flex flex-column align-items-center mb-4 position-relative z-1">
+                <img src="/images/student.png" alt="Sarah J." class="rounded-circle mb-3" width="80" height="80" style="object-fit:cover;border:2px solid rgba(217,119,6,0.3);">
+                <h5 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#1c1917;margin:0 0 4px;">Sarah Jenkins</h5>
+                <span style="color:#d97706;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;font-family:'Inter',sans-serif;">Directora de Marketing</span>
+              </div>
+              <p style="font-family:'Inter',sans-serif;font-size:1.05rem;color:#78716c;font-style:italic;line-height:1.8;position:relative;z-index:1;margin:0;">"La mejor inversión que he hecho. Mis reacciones impulsivas han disminuido significativamente y mi relación con el estrés en el trabajo cambió por completo. Las herramientas son realmente aplicables durante un día ocupado."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROBLEM / SOLUTION ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:#1c1917;letter-spacing:0.5px;">¿Es Esta Tu Realidad?</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
+        </div>
+        <div class="row g-4 justify-content-center">
+          {[
+            ["01","El Bucle Interminable","Sientes que tu mente nunca se apaga, ni siquiera al intentar dormir. El ruido mental es constante."],
+            ["02","Sobrecarga Total","Llevas el peso del trabajo y la familia, sintiendo que simplemente \"no puedes con todo\". La presión es abrumadora."],
+            ["03","Reactividad","Reaccionas de forma impulsiva o emocional al estrés diario, seguido de culpa. Buscas equilibrio pero encuentras fricción."],
+            ["04","Buscando la Verdad","Buscas herramientas que funcionen en tu rutina real, no en un retiro en el Tíbet."],
+          ].map(([n, title, text], i) => (
+            <div class={`col-md-6 ${i===0||i===3?'col-lg-5':'col-lg-7'} reveal`} style={`transition-delay:${i*100}ms`}>
+              <div class="light-panel p-5 h-100 d-flex flex-column justify-content-center">
+                <span class="text-amber fs-3 mb-3">{n}</span>
+                <h4 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:#1c1917;margin-bottom:1rem;">{title}</h4>
+                <p class="text-muted fw-light lh-lg mb-0">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRANSFORMATION ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <span class="text-amber fw-bold text-uppercase small" style="letter-spacing:2px;">Lo Que Lograrás</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">Tu Transformación</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
+        </div>
+        <div class="row g-0 reveal" style="border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 4px 30px rgba(0,0,0,0.06);">
+          <div class="col-md-6" style="padding:60px 50px;background:#faf8f5;border-right:1px solid #e7e5e4;">
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#78716c;margin-bottom:2.5rem;">Antes (El Caos)</h3>
+            <ul class="list-unstyled">
+              {["Sobrecarga y ansiedad constante","Insomnio y agotamiento","Reacciones explosivas","Desconexión total"].map(item => (
+                <li style="color:#78716c;font-size:1.1rem;margin-bottom:1.5rem;display:flex;align-items:start;font-weight:300;"><span style="opacity:0.5;margin-right:12px;color:#78716c;">✕</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="col-md-6" style="padding:60px 50px;background:#fff;position:relative;">
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at top right,rgba(217,119,6,0.05),transparent);pointer-events:none;"></div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#d97706;margin-bottom:2.5rem;">Después (Mente en Paz)</h3>
+            <ul class="list-unstyled position-relative" style="z-index:1;">
+              {["Calma y reducción de la ansiedad cuando más lo necesitas","Mejor descanso y despertar con energía real","Responder desde la calma y al equilibrio emocional","Usar tu cuerpo como ancla para volver al presente"].map(item => (
+                <li style="color:#1c1917;font-size:1.1rem;margin-bottom:1.5rem;display:flex;align-items:start;font-weight:400;"><span style="color:#d97706;margin-right:12px;">✦</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAM / MODULES SLIDER ===== -->
+    <section class="py-5 my-5" style="background-color:transparent;">
+      <div class="container py-5 reveal">
+        <div class="text-center mb-5">
+          <span class="text-amber text-uppercase small fw-bold" style="letter-spacing:2px;">El Esquema</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">El Método Mayim</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 1rem;"></div>
+          <p style="font-family:'Inter',sans-serif;color:#78716c;font-size:1.05rem;font-weight:300;">Un camino paso a paso meticulosamente diseñado para tu transformación.</p>
+        </div>
+        <div class="slider-wrapper-en position-relative w-100">
+          <div class="magazine-slider-en d-flex shadow-sm" id="esSlider">
+            {modules.map((mod, index) => (
+              <div class="magazine-card-es bg-white p-4 position-relative d-flex flex-column border-end">
+                <div class="position-absolute user-select-none" style="top:10px;right:16px;font-family:'Cormorant Garamond',serif;font-size:7rem;line-height:1;z-index:0;color:#d97706;opacity:0.12;font-weight:700;">0{index+1}</div>
+                <div class="position-relative d-flex flex-column" style="z-index:1;">
+                  <span class="text-amber text-uppercase fw-bold mb-2 d-block" style="letter-spacing:1px;font-size:0.75rem;">Módulo {index+1}</span>
+                  <h3 class="text-dark fw-normal mb-3" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;line-height:1.2;">{mod.title}</h3>
+                  <p class="text-muted fw-light mb-3 pb-3" style="font-style:italic;border-bottom:1px solid rgba(0,0,0,0.05);font-size:0.9rem;line-height:1.5;">{mod.description}</p>
+                  <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+                    {mod.body.split('\n').filter(l => l.trim()).map(line => (
+                      <li class="d-flex align-items-start">
+                        <span class="text-amber me-2" style="font-size:0.7rem;margin-top:4px;">✦</span>
+                        <span class="text-muted fw-light" style="font-size:0.85rem;line-height:1.55;">{line.replace(/^- /,'')}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="slider-fade-en right"></div>
+          <div class="slider-fade-en left"></div>
+        </div>
+        <div class="d-flex justify-content-center gap-2 mt-4" id="esPagination">
+          {modules.map((_, i) => (
+            <button class={`es-dot ${i===0?'active':''}`} data-idx={i} aria-label={`Slide ${i+1}`}></button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INSTRUCTOR ===== -->
+    <section class="py-5 bg-white">
+      <div class="container py-5 reveal">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <div class="position-relative">
+              <div class="position-absolute w-100 h-100" style="top:-15px;left:-15px;z-index:0;background:#faf8f5;border:1px solid rgba(0,0,0,0.1);"></div>
+              <img src="/images/vivian.webp" alt="Vivian Toussieh" class="img-fluid position-relative shadow-md" style="object-fit:cover;aspect-ratio:4/5;width:100%;border:4px solid white;border-radius:4px;z-index:1;">
+            </div>
+          </div>
+          <div class="col-lg-7 px-lg-5">
+            <span class="text-amber text-uppercase small fw-bold" style="letter-spacing:2px;">Tu Guía</span>
+            <h2 class="mb-4 mt-2" style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:400;color:#1c1917;">Vivian Toussieh</h2>
+            <div style="width:60px;height:1px;background:#d97706;margin-bottom:1.5rem;"></div>
+            <p style="font-family:'Inter',sans-serif;font-size:1.1rem;color:#78716c;line-height:1.8;font-weight:300;margin-bottom:1.5rem;">Vivian Toussieh es psicóloga, escritora y fundadora de Coexpace. Como madre y profesional, entiende de primera mano el desafío de mantener la calma cuando la vida no se detiene.</p>
+            <p style="font-family:'Inter',sans-serif;color:#78716c;line-height:1.8;font-weight:300;margin-bottom:2.5rem;">Es co-creadora del Método Mayim, un enfoque de meditación diseñado para la vida real, no para un retiro. Ha guiado a cientos de personas transformando la ansiedad y el agobio en profunda claridad y estabilidad interior.</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#1c1917;font-style:italic;border-left:2px solid #d97706;padding-left:20px;">"No necesitas más tiempo. Necesitas las herramientas adecuadas."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BONUSES / MASTERCLASSES ===== -->
+    <section class="py-5 bg-white">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <span class="text-amber text-uppercase small fw-bold" style="letter-spacing:2px;">Expertos Invitados</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">Masterclasses Incluidas</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 1rem;"></div>
+          <p style="font-family:'Inter',sans-serif;color:#78716c;font-weight:300;">Accede a perspectivas exclusivas de especialistas reconocidos mundialmente.</p>
+        </div>
+        <div class="row g-4 mt-4">
+          {[
+            { n:"01", img:"member-6.webp", name:"Dra. Edith Shiro", talk:"El Camino del Dolor al Propósito", desc:"Una profunda conferencia sobre cómo transformar el dolor en un propósito de vida, con profundidad clínica." },
+            { n:"02", img:"member-7.webp", name:"Dr. Manuel Ortega", talk:"Ansiedad y Depresión", desc:"Claves para comprender y manejar la ansiedad desde una perspectiva clínica y humana." },
+            { n:"03", img:"member-10.webp", name:"Dr. Ángel Oropeza", talk:"Raíces del Fanatismo", desc:"Un revelador análisis sobre los orígenes del fanatismo y el bienestar emocional." },
+          ].map((expert, i) => (
+            <div class="col-md-4 reveal" style={`transition-delay:${i*100}ms`}>
+              <div class="p-5 h-100 bg-white position-relative overflow-hidden" style="border:1px solid #e7e5e4;border-radius:1rem;transition:all 0.3s ease;">
+                <div class="position-absolute text-amber opacity-25 display-1" style="top:0;right:1rem;font-family:'Cormorant Garamond',serif;margin-top:0.5rem;">{expert.n}</div>
+                <div style="position:relative;display:inline-block;margin-bottom:2rem;z-index:1;">
+                  <div style="position:absolute;width:110px;height:110px;background:rgba(217,119,6,0.15);border-radius:50%;top:-5px;left:-15px;z-index:0;"></div>
+                  <img src={`https://coexpace.org/_next/image?url=%2Fhome%2Fevents%2Fspeakers%2F${expert.img}&w=256&q=75`} alt={expert.name} style="position:relative;z-index:1;width:100px;height:100px;object-fit:cover;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+                </div>
+                <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#1c1917;position:relative;z-index:1;">{expert.name}</h4>
+                <p style="color:#d97706;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;margin:1rem 0;font-family:'Inter',sans-serif;position:relative;z-index:1;">{expert.talk}</p>
+                <p style="color:#78716c;font-weight:300;line-height:1.7;font-family:'Inter',sans-serif;position:relative;z-index:1;">{expert.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STEPS ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-5 reveal">
+        <div class="text-center mb-5 pb-4">
+          <span class="text-amber fw-bold text-uppercase small" style="letter-spacing:2px;">El Proceso</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">Tu Viaje Comienza Aquí</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
+        </div>
+        <div class="row g-5 justify-content-center mt-2">
+          {[
+            ["I","Inscríbete Hoy","Un único pago seguro. Sin suscripciones ni cargos ocultos jamás."],
+            ["II","Obtén Acceso","Acceso inmediato a todos los módulos premium y clases magistrales de los expertos."],
+            ["III","Transfórmate","Avanza a tu propio ritmo, desde cualquier lugar y cuando quieras. Acceso de por vida."],
+          ].map(([roman, title, text], i) => (
+            <div class="col-md-4 text-center reveal" style={`transition-delay:${i*100}ms`}>
+              <div class="position-relative p-4 h-100 bg-white" style="border-radius:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.06);border:1px solid #e7e5e4;overflow:hidden;transition:all 0.3s ease;">
+                <div style="position:absolute;top:16px;left:20px;font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;line-height:1;color:#d97706;opacity:0.15;user-select:none;z-index:0;">{roman}</div>
+                <div class="position-relative pt-5" style="z-index:1;">
+                  <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:#1c1917;margin-top:1.5rem;">{title}</h4>
+                  <p style="font-family:'Inter',sans-serif;color:#78716c;font-weight:300;margin-top:1rem;padding:0 1rem;">{text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="py-5 my-3" id="checkout">
+      <div class="container py-5 reveal">
+        <div class="text-center mb-5 pb-2">
+          <span class="text-amber text-uppercase small fw-bold" style="letter-spacing:2px;">Acceso Premium</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">La Masterclass Mayim</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="pricing-card-es bg-white" style="border-radius:1rem;box-shadow:0 8px 40px rgba(0,0,0,0.1);border:1px solid rgba(217,119,6,0.2);overflow:hidden;">
+              <!-- Left -->
+              <div class="pricing-left-es p-5 d-flex flex-column justify-content-center text-center" style="background:linear-gradient(135deg,rgba(250,248,245,0.7) 0%,rgba(217,119,6,0.05) 100%);">
+                <h3 class="fw-normal mb-4 text-dark text-uppercase" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:1px;">Ticket de Por Vida</h3>
+                <div class="mb-4">
+                  <span class="text-muted d-block mb-2" style="text-decoration:line-through;">Antes $29</span>
+                  <span class="px-3 py-1 small fw-bold text-uppercase" style="background:#d97706;color:#fff;letter-spacing:1px;border-radius:3px;">Oferta Lanzamiento</span>
+                </div>
+                <div class="d-flex justify-content-center align-items-baseline mb-4" style="line-height:1;">
+                  <span class="text-muted fw-bold me-2" style="font-size:1.25rem;">USD</span>
+                  <span style="font-family:'Cormorant Garamond',serif;font-size:5.5rem;letter-spacing:-3px;font-weight:300;color:#1c1917;">19</span>
+                </div>
+                <a href="#" class="btn-amber-en d-block py-3 text-center" style="font-size:1rem;">Inscríbete Ahora &nbsp;→</a>
+                <div class="mt-4 pt-3 d-flex flex-column align-items-center gap-2" style="border-top:1px solid rgba(0,0,0,0.06);">
+                  <p class="text-muted small text-uppercase mb-0" style="font-size:0.70rem;font-weight:600;">100% Seguro y Encriptado</p>
+                  <span class="text-muted" style="font-size:0.8rem;opacity:0.5;">🔒 💳 🛡️</span>
+                </div>
+              </div>
+              <!-- Right -->
+              <div class="pricing-right-es p-5 d-flex flex-column justify-content-center" style="border-top:1px solid rgba(0,0,0,0.05);">
+                <h5 class="text-dark mb-4 text-uppercase pb-3" style="font-size:0.9rem;letter-spacing:1px;border-bottom:1px solid rgba(0,0,0,0.07);">Qué Incluye tu Ticket:</h5>
+                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                  {["7 Módulos completos de transformación","29 Meditaciones guiadas para cada ocasión","14 Cuadernos de aplicación en el mundo real","3 Conferencias de expertos mundiales","Acceso de por vida + futuras actualizaciones","Acceso inmediato desde cualquier dispositivo"].map(f => (
+                    <li class="d-flex align-items-start">
+                      <span class="me-3 mt-1" style="color:#d97706;font-size:1.2rem;">✓</span>
+                      <span class="text-muted fw-light" style="font-size:1.05rem;font-family:'Inter',sans-serif;">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-5 reveal" style="max-width:800px;margin:0 auto;">
+        <div class="text-center mb-5">
+          <span class="text-amber fw-bold text-uppercase small" style="letter-spacing:2px;">FAQ</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">¿Tienes Dudas?</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
+        </div>
+        <div style="border:1px solid #e7e5e4;border-radius:1rem;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+          {faqs.map((faq, i) => (
+            <details class="faq-item-en bg-white" name="faq-en" open={i===0}>
+              <summary class="px-4 py-4 d-flex justify-content-between align-items-center" style="cursor:pointer;list-style:none;">
+                <span style="font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:300;color:#1c1917;">{faq.question}</span>
+                <span style="color:#d97706;font-size:1.4rem;line-height:1;">+</span>
+              </summary>
+              <div class="px-4 pb-4 bg-white">
+                <p style="font-family:'Inter',sans-serif;color:#78716c;font-weight:300;line-height:1.8;margin:0;">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-white py-5" style="border-top:1px solid rgba(217,119,6,0.1);">
+    <div class="container py-4">
+      <div class="row gy-5">
+        <div class="col-lg-5 col-md-12 pe-lg-5 reveal">
+          <h4 class="mb-3 text-dark text-uppercase" style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;letter-spacing:4px;">COEXPACE</h4>
+          <div style="width:40px;height:1px;background:#d97706;margin:0.5rem 0 1.5rem;"></div>
+          <p style="font-family:'Inter',sans-serif;color:#78716c;font-size:0.95rem;line-height:1.8;font-weight:300;margin-bottom:0.75rem;">COEXPACE es una iniciativa global que activa la empatía, el coraje moral y la convivencia a través de narrativas inmersivas, educación y acción cívica.</p>
+          <p style="font-family:'Inter',sans-serif;color:#78716c;font-size:0.95rem;line-height:1.8;font-weight:300;">Creamos experiencias transformadoras que desafían supuestos, generan diálogo crítico y ayudan a las personas a actuar con integridad.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 reveal" style="transition-delay:100ms;">
+          <h5 class="mb-4 text-dark text-uppercase" style="font-size:0.9rem;letter-spacing:2px;font-family:'Inter',sans-serif;">Explorar</h5>
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+            {[["Inicio","https://coexpace.org/"],["Sobre Nosotros","https://coexpace.org/about-us"],["COEXPACE Center","https://coexpace.org/coexpace-center"],["Cumbres y Exposiciones","https://coexpace.org/events"]].map(([label, href]) => (
+              <li><a href={href} class="text-muted text-decoration-none fw-light footer-link-en" style="font-family:'Inter',sans-serif;font-size:0.95rem;">{label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 reveal" style="transition-delay:200ms;">
+          <h5 class="mb-4 text-dark text-uppercase" style="font-size:0.9rem;letter-spacing:2px;font-family:'Inter',sans-serif;">Contacto</h5>
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
+            <li><span class="text-muted fw-light" style="font-family:'Inter',sans-serif;">Miami, Florida</span></li>
+            <li><a href="mailto:contact@coexpace.org" class="text-muted text-decoration-none fw-light footer-link-en" style="font-family:'Inter',sans-serif;">contact@coexpace.org</a></li>
+          </ul>
+          <h5 class="mb-3 text-dark text-uppercase mt-4 pt-2" style="font-size:0.85rem;letter-spacing:2px;font-family:'Inter',sans-serif;">Síguenos</h5>
+          <div class="d-flex gap-3">
+            {[
+              { href:"https://instagram.com/coexpace", label:"Instagram", path:"M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.036 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" },
+              { href:"https://linkedin.com/company/coexpace", label:"LinkedIn", path:"M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S1.2 3.226 1.2 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" },
+              { href:"https://facebook.com/coexpace", label:"Facebook", path:"M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" },
+            ].map(social => (
+              <a href={social.href} target="_blank" class="social-icon-en text-muted text-decoration-none" aria-label={social.label}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d={social.path}/></svg>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="pt-4 mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center" style="border-top:1px solid rgba(0,0,0,0.05);">
+        <p class="mb-0 text-muted small fw-light text-uppercase" style="letter-spacing:1.5px;font-size:0.75rem;font-family:'Inter',sans-serif;">© {new Date().getFullYear()} COEXPACE. Todos los Derechos Reservados.</p>
+        <div class="d-flex gap-4 mt-3 mt-md-0">
+          <a href="https://coexpace.org/privacy-policy" class="text-muted small text-decoration-none footer-link-en" style="font-family:'Inter',sans-serif;">Política de Privacidad</a>
+          <a href="https://coexpace.org/terms-and-conditions" class="text-muted small text-decoration-none footer-link-en" style="font-family:'Inter',sans-serif;">Términos y Condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 </Layout>
 
-<style>
-	main {
-		margin: 0;
-		padding: 0;
-		width: 100%;
-	}
-    .footer-link { transition: color 0.3s ease; }
-    .footer-link:hover { color: #d97706 !important; }
-    .social-icon { 
-        width: 40px; height: 40px; border-radius: 50%; border: 1px solid rgba(0,0,0,0.1); 
-        display: flex; align-items: center; justify-content: center; 
-        transition: all 0.3s ease; font-family: 'Cormorant Garamond', serif; 
+<style is:global>
+  /* Hero */
+  .hero-en {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero-bg-en {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(250,248,245,0.9), rgba(250,248,245,0.6)), url('/images/hero_light.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: slowZoom 20s ease-in-out infinite alternate;
+    transform: scale(1.02);
+  }
+  @keyframes slowZoom { 0% { transform: scale(1.02); } 100% { transform: scale(1.05); } }
+  .hero-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5.5rem;
+    font-weight: 500;
+    line-height: 1.05;
+    color: #1c1917;
+    text-shadow: 0 4px 15px rgba(255,255,255,0.8);
+    margin: 2rem 0 1.5rem;
+  }
+  .hero-sub-en {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: #78716c;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+  .badge-pill-en {
+    letter-spacing: 3px;
+    color: #d97706;
+    border: 1px solid #d97706;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.7);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+  }
+  .text-amber { color: #d97706; }
+
+  /* Buttons */
+  .btn-amber-en {
+    display: inline-block;
+    background: #d97706;
+    color: #fff !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 16px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  .btn-amber-en:hover {
+    background: #b45309;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217,119,6,0.4);
+  }
+
+  /* Light panels */
+  .light-panel {
+    background: #faf8f5;
+    border: 1px solid #e7e5e4;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+  }
+  .light-panel:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+  }
+
+  /* Slider */
+  .slider-wrapper-en {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .slider-fade-en {
+    position: absolute;
+    top: 0; height: 100%; width: 50px;
+    pointer-events: none; z-index: 2;
+  }
+  .slider-fade-en.right { right: 0; background: linear-gradient(to right, rgba(250,248,245,0), rgba(250,248,245,1)); }
+  .slider-fade-en.left  { left:  0; background: linear-gradient(to left,  rgba(250,248,245,0), rgba(250,248,245,1)); }
+  .magazine-slider-en {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .magazine-slider-en::-webkit-scrollbar { display: none; }
+  .magazine-card-en {
+    flex: 0 0 450px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    border-color: rgba(0,0,0,0.05);
+    height: 600px;
+    transition: all 0.3s ease;
+  }
+  .magazine-card-en:last-child { border-right: none !important; }
+
+  /* Pagination dots */
+  .en-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(217,119,6,0.3);
+    border: none; padding: 0;
+    transition: all 0.3s ease; cursor: pointer;
+  }
+  .en-dot.active { background: #d97706; width: 24px; border-radius: 4px; }
+
+  /* FAQ */
+  .faq-item-en {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .faq-item-en:last-child { border-bottom: none; }
+  .faq-item-en summary { list-style: none; }
+  .faq-item-en summary::-webkit-details-marker { display: none; }
+  .faq-item-en[open] { background: #faf8f5 !important; }
+  .faq-item-en[open] summary { color: #d97706; }
+
+  /* Social icons */
+  .social-icon-en {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .social-icon-en:hover { background: #d97706; color: white !important; border-color: #d97706; transform: translateY(-3px); }
+
+  /* Footer links */
+  .footer-link-en { transition: color 0.3s ease; }
+  .footer-link-en:hover { color: #d97706 !important; }
+
+  /* Spanish slider card */
+  .magazine-card-es {
+    flex: 0 0 400px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    border-color: rgba(0,0,0,0.05);
+    min-height: auto;
+    transition: all 0.3s ease;
+  }
+  .magazine-card-es:last-child { border-right: none !important; }
+
+  /* Spanish pagination dots */
+  .es-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(217,119,6,0.3);
+    border: none; padding: 0;
+    transition: all 0.3s ease; cursor: pointer;
+  }
+  .es-dot.active { background: #d97706; width: 24px; border-radius: 4px; }
+
+  /* Pricing layout fix */
+  .pricing-card-es {
+    display: flex;
+    flex-direction: column;
+  }
+  .pricing-left-es { flex: none; }
+  .pricing-right-es { flex: 1; border-left: none; }
+
+  @media (min-width: 768px) {
+    .pricing-card-es {
+      flex-direction: row;
     }
-    .social-icon:hover { background-color: #d97706; color: white !important; border-color: #d97706; transform: translateY(-3px); }
+    .pricing-left-es {
+      flex: 0 0 42%;
+    }
+    .pricing-right-es {
+      flex: 1;
+      border-left: 1px solid rgba(0,0,0,0.05);
+      border-top: none;
+    }
+  }
+
+  /* Reveal fix — support both .active and .visible */
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .hero-title-en { font-size: 3rem; }
+    .magazine-card-es { flex: 0 0 300px; }
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('esSlider');
+    if (!slider) return;
+
+    let isHovering = false;
+    slider.addEventListener('mouseenter', () => { isHovering = true; });
+    slider.addEventListener('mouseleave', () => { isHovering = false; });
+    slider.addEventListener('touchstart', () => { isHovering = true; }, { passive: true });
+    slider.addEventListener('touchend', () => { setTimeout(() => { isHovering = false; }, 2000); }, { passive: true });
+
+    const dots = document.querySelectorAll('.es-dot');
+    const cardWidth = () => window.innerWidth <= 768 ? 300 : 400;
+
+    slider.addEventListener('scroll', () => {
+      let idx = Math.round(slider.scrollLeft / cardWidth());
+      if (idx >= dots.length) idx = dots.length - 1;
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        isHovering = true;
+        setTimeout(() => { isHovering = false; }, 4000);
+        const target = e.target;
+        const i = parseInt(target.dataset.idx || '0');
+        slider.scrollTo({ left: i * cardWidth(), behavior: 'smooth' });
+      });
+    });
+
+    const auto = setInterval(() => {
+      if (!isHovering) {
+        const cw = cardWidth();
+        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 10) {
+          slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          slider.scrollBy({ left: cw, behavior: 'smooth' });
+        }
+      }
+    }, 3500);
+  });
+</script>
