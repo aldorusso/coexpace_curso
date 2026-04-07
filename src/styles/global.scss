@@ -1,0 +1,97 @@
+@import 'bootstrap/scss/bootstrap-grid';
+@import './variables.scss';
+
+html {
+  font-size: 18px; /* ↑ from 16px — scales ALL rem values proportionally */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-secondary;
+  background-color: $color-bg;
+  color: $color-text;
+  scroll-behavior: smooth;
+  font-size: 1rem;   /* 18px */
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-primary;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+  color: $color-text;
+}
+
+/* Sharper body text */
+p, li, span, label {
+  font-family: $font-secondary;
+  font-size: 1rem; /* 18px */
+  line-height: 1.8;
+}
+
+.small, small {
+  font-size: 0.85rem; /* ~15px — was smaller before */
+}
+
+a {
+  text-decoration: none;
+  color: $color-accent;
+  transition: $transition-base;
+
+  &:hover {
+    color: $color-accent-hover;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Base Utility Classes */
+.text-center { text-align: center; }
+.text-accent { color: $color-accent !important; }
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  background-color: $color-accent;
+  color: white;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: $transition-base;
+  text-decoration: none;
+  box-shadow: $shadow-md;
+
+  &:hover {
+    background-color: $color-accent-hover;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+}
+
+/* Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: $transition-smooth;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Bootstrap overrides — bump up bs utility text sizes */
+.fs-5 { font-size: 1.1rem !important; }
+.fs-6 { font-size: 0.95rem !important; }
+.display-3 { font-size: 3.5rem !important; }
+.display-4 { font-size: 2.5rem !important; }
+.display-5 { font-size: 2rem !important; }

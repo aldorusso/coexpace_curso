@@ -1,0 +1,57 @@
+---
+---
+<section class="transformation py-5 position-relative z-1" style="background-color: transparent;">
+  <div class="container py-5">
+    <div class="text-center mb-5 reveal">
+      <span class="text-accent fw-bold text-uppercase tracking-wide small" style="letter-spacing: 2px;">Lo Que Lograrás</span>
+      <h2 class="display-4 text-dark mt-3" style="font-family: 'Cormorant Garamond', serif;">Tu Transformación</h2>
+      <div class="mx-auto mt-4" style="width: 40px; height: 1px; background-color: #d97706;"></div>
+    </div>
+    
+    <div class="row g-0 compare-table reveal rounded-4 overflow-hidden bg-white shadow-md">
+      <div class="col-md-6 before-col">
+        <h3 class="mb-5 text-muted" style="font-family: 'Cormorant Garamond', serif; font-size: 2rem;">Antes (El Caos)</h3>
+        <ul class="list-unstyled">
+          <li><span class="opacity-50 me-3 text-muted">✕</span> Sobrecarga constante y ansiedad</li>
+          <li><span class="opacity-50 me-3 text-muted">✕</span> Insomnio y agotamiento</li>
+          <li><span class="opacity-50 me-3 text-muted">✕</span> Reacciones explosivas</li>
+          <li><span class="opacity-50 me-3 text-muted">✕</span> Desconexión total</li>
+        </ul>
+      </div>
+      <div class="col-md-6 after-col position-relative">
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle at top right, rgba(217,119,6,0.05), transparent); pointer-events: none;"></div>
+        <h3 class="mb-5 text-accent" style="font-family: 'Cormorant Garamond', serif; font-size: 2rem;">Después (Mente en Paz)</h3>
+        <ul class="list-unstyled position-relative z-1">
+          <li><span class="text-accent me-3">✦</span> Calma y reducción de ansiedad cuando más lo necesitas</li>
+          <li><span class="text-accent me-3">✦</span> Mejor descanso y despertar con energía real</li>
+          <li><span class="text-accent me-3">✦</span> Responder desde la calma y el equilibrio emocional</li>
+          <li><span class="text-accent me-3">✦</span> Usar tu cuerpo como ancla para volver al presente</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+  
+  .compare-table {
+    .before-col, .after-col { padding: 60px 50px; }
+    
+    .before-col {
+      border-right: 1px solid $color-border;
+      background: #faf8f5;
+      li { color: #57534e; font-size: 1.1rem; margin-bottom: 25px; display: flex; align-items: start; font-weight: 300; }
+    }
+    
+    .after-col {
+      background: #ffffff;
+      li { color: $color-text; font-size: 1.1rem; margin-bottom: 25px; display: flex; align-items: start; font-weight: 400; }
+    }
+    
+    @media (max-width: 768px) {
+      .before-col { border-right: none; border-bottom: 1px solid $color-border; padding: 40px 30px;}
+      .after-col { padding: 40px 30px;}
+    }
+  }
+</style>

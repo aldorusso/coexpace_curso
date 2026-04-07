@@ -1,0 +1,75 @@
+---
+---
+<section class="steps-section py-5 position-relative z-1" style="background-color: transparent;">
+  <div class="container py-5 reveal">
+    <div class="text-center mb-5 pb-4">
+      <span class="text-accent fw-bold text-uppercase tracking-wide small" style="letter-spacing: 2px;">El Proceso</span>
+      <h2 class="display-4 text-dark mt-3" style="font-family: 'Cormorant Garamond', serif;">Tu Viaje Comienza</h2>
+      <div class="mx-auto mt-4" style="width: 40px; height: 1px; background-color: #d97706;"></div>
+    </div>
+    
+    <div class="row g-5 position-relative justify-content-center mt-2">
+
+      <div class="col-md-4 text-center reveal">
+        <div class="step-card-es position-relative p-5 h-100 bg-white overflow-hidden">
+          <div class="step-numeral-es">I</div>
+          <div class="position-relative pt-4" style="z-index:1;">
+            <h4 class="text-dark fw-normal mt-3" style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;">Inscríbete Hoy</h4>
+            <p class="text-muted fw-light mt-3 px-3">Pago único seguro. Sin suscripciones ni cargos ocultos jamás.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 text-center reveal" style="transition-delay: 100ms">
+        <div class="step-card-es position-relative p-5 h-100 bg-white overflow-hidden">
+          <div class="step-numeral-es">II</div>
+          <div class="position-relative pt-4" style="z-index:1;">
+            <h4 class="text-dark fw-normal mt-3" style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;">Obtén Acceso</h4>
+            <p class="text-muted fw-light mt-3 px-3">Acceso inmediato a todos los módulos premium y masterclasses de expertos.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4 text-center reveal" style="transition-delay: 200ms">
+        <div class="step-card-es position-relative p-5 h-100 bg-white overflow-hidden">
+          <div class="step-numeral-es">III</div>
+          <div class="position-relative pt-4" style="z-index:1;">
+            <h4 class="text-dark fw-normal mt-3" style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;">Transfórmate</h4>
+            <p class="text-muted fw-light mt-3 px-3">Practica a tu propio ritmo, donde y cuando quieras. Acceso de por vida.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+
+  .step-card-es {
+    border-radius: 1rem;
+    border: 1px solid #e7e5e4;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: $transition-smooth;
+    &:hover {
+      border-color: rgba(217,119,6,0.35);
+      transform: translateY(-5px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  .step-numeral-es {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    line-height: 1;
+    color: $color-accent;
+    opacity: 0.15;
+    user-select: none;
+    z-index: 0;
+  }
+</style>

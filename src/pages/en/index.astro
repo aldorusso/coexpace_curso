@@ -1,0 +1,605 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+
+const modules = [
+  { order: 1, title: "Introduction & Foundations", description: "We start by understanding where you are today...", body: "We start by understanding where you are today and why your mind won't stop.\nPractical exercises to begin noticing your automatic patterns.\nTake the first step toward conscious presence." },
+  { order: 2, title: "Posture, Breathing & Attitude", description: "The foundations of your practice.", body: "Learn how to use your body and breathing to establish a solid foundation.\nDiscover the three pillars of a sustainable daily meditation practice.\nCalibrate your mindset for lasting transformation." },
+  { order: 3, title: "Neuroscience & Meditation", description: "How your brain changes.", body: "Discover exactly what happens in your brain and nervous system when you meditate.\nLearn how to rewire your stress responses with science-backed techniques.\nUnderstand neuroplasticity and why repetition is your superpower." },
+  { order: 4, title: "Breathing & Presence", description: "Anchoring to the now.", body: "Deeper breathing techniques designed to rapidly bring you back to the present.\nWhen life feels overwhelming, use your breath as your anchor.\nPractice applied presence in the middle of your busiest moments." },
+  { order: 5, title: "Thoughts", description: "Detaching from the noise.", body: "You are not your thoughts. Learn to observe them without judgment.\nBreak free from mental loops that drain your energy every day.\nPractice the art of cognitive distance and mental clarity." },
+  { order: 6, title: "Emotions", description: "Feeling without reacting.", body: "Navigate intense emotions with balance and emotional regulation techniques.\nLearn the difference between reacting and responding from calm.\nBuild your emotional vocabulary and your inner resilience muscle." },
+  { order: 7, title: "Habits & Heart Intelligence", description: "Creating a sustainable lifestyle.", body: "Integrate these practices into your daily routine seamlessly.\nBuild resilience and heart-brain coherence for long-term wellbeing.\nDesign your own sustainable ritual that actually fits your life." },
+  { order: 8, title: "29 Guided Meditations", description: "Your daily toolkit.", body: "Access to 29 specifically designed guided meditations for every moment.\nMeditations for anxiety, sleep, focus, and emotional regulation.\nYour portable calm — available from any device, anytime." },
+];
+
+const faqs = [
+  { question: "How much time do I need per day?", answer: "With just 10 to 15 minutes a day, you can start noticing real changes in your mental clarity and anxiety reduction." },
+  { question: "Do I need previous meditation experience?", answer: "No, not at all. The Mayim Method is designed from scratch. You will learn the basics and advance step by step." },
+  { question: "How do I access the material?", answer: "You get immediate access to our Coexpace LMS platform as soon as you enroll. You can log in from any device." },
+  { question: "Does the course expire?", answer: "You will have lifetime access! Practice at your own pace, wherever and whenever you want." },
+];
+---
+
+<Layout title="Meditation and Mindfulness for Daily Life | COEXPACE">
+  <Navbar />
+
+  <!-- Language Floater: shows ESP flag to go back to Spanish -->
+  <a href="/" title="Cambiar a Español" aria-label="Cambiar a Español" style="position:fixed;right:24px;bottom:32px;z-index:99999;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,0.10);box-shadow:0 4px 20px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:transform 0.25s ease,box-shadow 0.25s ease;text-decoration:none;" onmouseenter="this.style.transform='scale(1.12) translateY(-3px)';this.style.boxShadow='0 8px 30px rgba(0,0,0,0.2)';" onmouseleave="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.15)';">
+    <img src="https://flagcdn.com/w80/es.png" alt="Español" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" />
+  </a>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-en" id="hero">
+      <div class="hero-bg-en"></div>
+      <div class="container position-relative z-2 reveal text-center">
+        <span class="badge-pill-en">Masterclass Edition</span>
+        <h1 class="hero-title-en">Find Your <em class="text-amber">Calm</em><br/>in the Chaos</h1>
+        <p class="hero-sub-en">A premium system designed for women who juggle work, family, and anxiety. Stop living on autopilot and reclaim your clarity today.</p>
+        <div class="d-flex flex-column align-items-center">
+          <a href="#checkout" class="btn-amber-en mb-4">Enroll Now</a>
+          <p class="small text-muted" style="letter-spacing:1px;"><span class="text-amber">★</span> Join hundreds of women already transforming their lives</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOCIAL PROOF ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-4 reveal">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:#1c1917;">Why This Course<br><em class="text-amber">Is Different</em></h2>
+            <div style="width:40px;height:1px;background:#d97706;margin:1.2rem 0 1.5rem;"></div>
+            <p style="font-family:'Inter',sans-serif;color:#78716c;font-size:1.1rem;line-height:1.8;font-weight:300;">This is not a course to learn how to meditate. It's a system to stop living on autopilot, even when life doesn't stop.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-4 text-center">
+              {[["7","Modules","of transformation"],["14","Workbooks","real-world application"],["29","Audio","guided meditations"]].map(([num,label,sub]) => (
+                <div class="col-sm-4">
+                  <div class="light-panel p-4 h-100 bg-white shadow-sm" style="border-top:2px solid rgba(217,119,6,0.4);border:1px solid #e7e5e4;border-radius:4px;">
+                    <span class="d-block display-3 text-dark mb-2" style="font-family:'Cormorant Garamond',serif;">{num}</span>
+                    <strong class="d-block fs-6 text-amber text-uppercase" style="letter-spacing:1px;">{label}</strong>
+                    <span class="text-muted small fst-italic">{sub}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-5 reveal">
+        <div class="text-center mb-5">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:400;color:#1c1917;">Real Women. Real Transformations.</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-7">
+            <div class="p-5 position-relative bg-white shadow-sm text-center" style="border-radius:1rem;border:1px solid #e7e5e4;">
+              <div style="position:absolute;top:10px;right:30px;font-family:'Cormorant Garamond',serif;font-size:6rem;color:#d97706;opacity:0.2;line-height:1;">"</div>
+              <div class="d-flex flex-column align-items-center mb-4 position-relative z-1">
+                <img src="/images/student.png" alt="Sarah J." class="rounded-circle mb-3" width="80" height="80" style="object-fit:cover;border:2px solid rgba(217,119,6,0.3);">
+                <h5 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#1c1917;margin:0 0 4px;">Sarah Jenkins</h5>
+                <span style="color:#d97706;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;font-family:'Inter',sans-serif;">Marketing Director</span>
+              </div>
+              <p style="font-family:'Inter',sans-serif;font-size:1.05rem;color:#78716c;font-style:italic;line-height:1.8;position:relative;z-index:1;margin:0;">"The best investment I've made. My impulsive reactions have significantly decreased, and my relationship with stress at work completely changed. The tools are actually usable during a busy day."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROBLEM / SOLUTION ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:#1c1917;letter-spacing:0.5px;">Is This Your Reality?</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
+        </div>
+        <div class="row g-4 justify-content-center">
+          {[
+            ["01","The Endless Loop","You feel like your mind never shuts off, not even when trying to sleep. The noise is constant."],
+            ["02","Total Overload","You carry the weight of work and family, feeling like you simply \"can't do it all\". The pressure is overwhelming."],
+            ["03","Reactivity","You react impulsively or emotionally to daily stress, followed by guilt. You seek balance but find friction."],
+            ["04","Seeking Truth","You're looking for tools that work in your real routine, not on a retreat in Tibet."],
+          ].map(([n, title, text], i) => (
+            <div class={`col-md-6 ${i===0||i===3?'col-lg-5':'col-lg-7'} reveal`} style={`transition-delay:${i*100}ms`}>
+              <div class="light-panel p-5 h-100 d-flex flex-column justify-content-center">
+                <span class="text-amber fs-3 mb-3">{n}</span>
+                <h4 style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:400;color:#1c1917;margin-bottom:1rem;">{title}</h4>
+                <p class="text-muted fw-light lh-lg mb-0">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRANSFORMATION ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <span class="text-amber fw-bold text-uppercase small" style="letter-spacing:2px;">What You Will Achieve</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">Your Transformation</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
+        </div>
+        <div class="row g-0 reveal" style="border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 4px 30px rgba(0,0,0,0.06);">
+          <div class="col-md-6" style="padding:60px 50px;background:#faf8f5;border-right:1px solid #e7e5e4;">
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#78716c;margin-bottom:2.5rem;">Before (The Chaos)</h3>
+            <ul class="list-unstyled">
+              {["Constant overload and anxiety","Insomnia and exhaustion","Explosive reactions","Total disconnection"].map(item => (
+                <li style="color:#78716c;font-size:1.1rem;margin-bottom:1.5rem;display:flex;align-items:start;font-weight:300;"><span style="opacity:0.5;margin-right:12px;color:#78716c;">✕</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="col-md-6" style="padding:60px 50px;background:#fff;position:relative;">
+            <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at top right,rgba(217,119,6,0.05),transparent);pointer-events:none;"></div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#d97706;margin-bottom:2.5rem;">After (Mind at Peace)</h3>
+            <ul class="list-unstyled position-relative" style="z-index:1;">
+              {["Calm and anxiety reduction when you need it most","Better sleep and waking up with real energy","Responding from calm and emotional balance","Using your body as an anchor to return to the present"].map(item => (
+                <li style="color:#1c1917;font-size:1.1rem;margin-bottom:1.5rem;display:flex;align-items:start;font-weight:400;"><span style="color:#d97706;margin-right:12px;">✦</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROGRAM / MODULES SLIDER ===== -->
+    <section class="py-5 my-5" style="background-color:transparent;">
+      <div class="container py-5 reveal">
+        <div class="text-center mb-5">
+          <span class="text-amber text-uppercase small fw-bold" style="letter-spacing:2px;">The Blueprint</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">The Mayim Method</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 1rem;"></div>
+          <p style="font-family:'Inter',sans-serif;color:#78716c;font-size:1.05rem;font-weight:300;">A step-by-step path meticulously designed for your transformation.</p>
+        </div>
+        <div class="slider-wrapper-en position-relative w-100">
+          <div class="magazine-slider-en d-flex shadow-sm" id="enSlider">
+            {modules.map((mod, index) => (
+              <div class="magazine-card-en bg-white p-5 position-relative d-flex flex-column h-100 border-end">
+                <div class="position-absolute opacity-10 fw-bold user-select-none" style="top:10px;right:20px;font-family:'Cormorant Garamond',serif;font-size:10rem;line-height:1;z-index:0;color:#d97706;">0{index+1}</div>
+                <div class="position-relative d-flex flex-column h-100" style="z-index:1;">
+                  <span class="text-amber text-uppercase small fw-bold mb-3 d-block" style="letter-spacing:1px;">Module {index+1}</span>
+                  <h3 class="text-dark fw-normal mb-4" style="font-family:'Cormorant Garamond',serif;font-size:2rem;min-height:4rem;">{mod.title}</h3>
+                  <p class="text-muted fs-6 fw-light mb-4 pb-4 flex-grow-0" style="font-style:italic;border-bottom:1px solid rgba(0,0,0,0.05);">{mod.description}</p>
+                  <div class="flex-grow-1 overflow-auto pe-2" style="max-height:250px;">
+                    <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                      {mod.body.split('\n').filter(l => l.trim()).map(line => (
+                        <li class="d-flex align-items-start">
+                          <span class="text-amber me-2" style="font-size:0.8rem;margin-top:5px;">✦</span>
+                          <span class="text-muted fw-light small lh-base">{line.replace(/^- /,'')}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="slider-fade-en right"></div>
+          <div class="slider-fade-en left"></div>
+        </div>
+        <div class="d-flex justify-content-center gap-2 mt-4" id="enPagination">
+          {modules.map((_, i) => (
+            <button class={`en-dot ${i===0?'active':''}`} data-idx={i} aria-label={`Slide ${i+1}`}></button>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INSTRUCTOR ===== -->
+    <section class="py-5 bg-white">
+      <div class="container py-5 reveal">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <div class="position-relative">
+              <div class="position-absolute w-100 h-100" style="top:-15px;left:-15px;z-index:0;background:#faf8f5;border:1px solid rgba(0,0,0,0.1);"></div>
+              <img src="/images/vivian.webp" alt="Vivian Toussieh" class="img-fluid position-relative shadow-md" style="object-fit:cover;aspect-ratio:4/5;width:100%;border:4px solid white;border-radius:4px;z-index:1;">
+            </div>
+          </div>
+          <div class="col-lg-7 px-lg-5">
+            <span class="text-amber text-uppercase small fw-bold" style="letter-spacing:2px;">Your Guide</span>
+            <h2 class="mb-4 mt-2" style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:400;color:#1c1917;">Vivian Toussieh</h2>
+            <div style="width:60px;height:1px;background:#d97706;margin-bottom:1.5rem;"></div>
+            <p style="font-family:'Inter',sans-serif;font-size:1.1rem;color:#78716c;line-height:1.8;font-weight:300;margin-bottom:1.5rem;">Vivian Toussieh is a psychologist, writer, and founder of Coexpace. As a mother and professional, she understands firsthand the challenge of staying calm when life doesn't stop.</p>
+            <p style="font-family:'Inter',sans-serif;color:#78716c;line-height:1.8;font-weight:300;margin-bottom:2.5rem;">She is the co-creator of the Mayim Method, a meditation approach designed for real life — not for a retreat. She has guided hundreds of people in transforming anxiety and overwhelm into profound clarity and inner stability.</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#1c1917;font-style:italic;border-left:2px solid #d97706;padding-left:20px;">"You don't need more time. You need the right tools."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BONUSES / MASTERCLASSES ===== -->
+    <section class="py-5 bg-white">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <span class="text-amber text-uppercase small fw-bold" style="letter-spacing:2px;">Guest Experts</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">Included Masterclasses</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 1rem;"></div>
+          <p style="font-family:'Inter',sans-serif;color:#78716c;font-weight:300;">Unlock exclusive insights from world-renowned specialists.</p>
+        </div>
+        <div class="row g-4 mt-4">
+          {[
+            { n:"01", img:"member-6.webp", name:"Dr. Edith Shiro", talk:"The Path from Pain to Purpose", desc:"A profound conference on transforming pain into life purpose, with clinical depth." },
+            { n:"02", img:"member-7.webp", name:"Dr. Manuel Ortega", talk:"Anxiety and Depression", desc:"Keys to understanding and managing anxiety from a clinical and human perspective." },
+            { n:"03", img:"member-10.webp", name:"Dr. Ángel Oropeza", talk:"Roots of Fanaticism", desc:"A revealing analysis of the origins of fanaticism and emotional well-being." },
+          ].map((expert, i) => (
+            <div class="col-md-4 reveal" style={`transition-delay:${i*100}ms`}>
+              <div class="p-5 h-100 bg-white position-relative overflow-hidden" style="border:1px solid #e7e5e4;border-radius:1rem;transition:all 0.3s ease;">
+                <div class="position-absolute text-amber opacity-25 display-1" style="top:0;right:1rem;font-family:'Cormorant Garamond',serif;margin-top:0.5rem;">{expert.n}</div>
+                <div style="position:relative;display:inline-block;margin-bottom:2rem;z-index:1;">
+                  <div style="position:absolute;width:110px;height:110px;background:rgba(217,119,6,0.15);border-radius:50%;top:-5px;left:-15px;z-index:0;"></div>
+                  <img src={`https://coexpace.org/_next/image?url=%2Fhome%2Fevents%2Fspeakers%2F${expert.img}&w=256&q=75`} alt={expert.name} style="position:relative;z-index:1;width:100px;height:100px;object-fit:cover;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 10px rgba(0,0,0,0.05);">
+                </div>
+                <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#1c1917;position:relative;z-index:1;">{expert.name}</h4>
+                <p style="color:#d97706;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;margin:1rem 0;font-family:'Inter',sans-serif;position:relative;z-index:1;">{expert.talk}</p>
+                <p style="color:#78716c;font-weight:300;line-height:1.7;font-family:'Inter',sans-serif;position:relative;z-index:1;">{expert.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STEPS ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-5 reveal">
+        <div class="text-center mb-5 pb-4">
+          <span class="text-amber fw-bold text-uppercase small" style="letter-spacing:2px;">The Process</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">Your Journey Begins</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
+        </div>
+        <div class="row g-5 justify-content-center mt-2">
+          {[
+            ["I","Enroll Today","One-time secure payment. No subscriptions or hidden charges ever."],
+            ["II","Get Access","Immediate access to all the premium modules and expert masterclasses."],
+            ["III","Transform","Practice at your own pace, wherever and whenever you want. Lifetime access."],
+          ].map(([roman, title, text], i) => (
+            <div class="col-md-4 text-center reveal" style={`transition-delay:${i*100}ms`}>
+              <div class="position-relative p-4 h-100 bg-white" style="border-radius:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.06);border:1px solid #e7e5e4;overflow:hidden;transition:all 0.3s ease;">
+                <div style="position:absolute;top:16px;left:20px;font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:300;line-height:1;color:#d97706;opacity:0.15;user-select:none;z-index:0;">{roman}</div>
+                <div class="position-relative pt-5" style="z-index:1;">
+                  <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:400;color:#1c1917;margin-top:1.5rem;">{title}</h4>
+                  <p style="font-family:'Inter',sans-serif;color:#78716c;font-weight:300;margin-top:1rem;padding:0 1rem;">{text}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="py-5 my-3" id="checkout">
+      <div class="container py-5 reveal">
+        <div class="text-center mb-5 pb-2">
+          <span class="text-amber text-uppercase small fw-bold" style="letter-spacing:2px;">Premium Access</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">The Mayim Masterclass</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="bg-white d-flex flex-column flex-md-row" style="border-radius:1rem;box-shadow:0 8px 40px rgba(0,0,0,0.1);border:1px solid rgba(217,119,6,0.2);overflow:hidden;">
+              <!-- Left -->
+              <div class="p-5 col-md-5 d-flex flex-column justify-content-center text-center" style="background:linear-gradient(135deg,rgba(250,248,245,0.7) 0%,rgba(217,119,6,0.05) 100%);">
+                <h3 class="fw-normal mb-4 text-dark text-uppercase" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:1px;">Lifetime Ticket</h3>
+                <div class="mb-4">
+                  <span class="text-muted d-block mb-2" style="text-decoration:line-through;">Was $29</span>
+                  <span class="px-3 py-1 small fw-bold text-uppercase" style="background:#d97706;color:#fff;letter-spacing:1px;border-radius:3px;">Launch Offer</span>
+                </div>
+                <div class="d-flex justify-content-center align-items-baseline mb-4" style="line-height:1;">
+                  <span class="text-muted fw-bold me-2" style="font-size:1.25rem;">USD</span>
+                  <span style="font-family:'Cormorant Garamond',serif;font-size:5.5rem;letter-spacing:-3px;font-weight:300;color:#1c1917;">19</span>
+                </div>
+                <a href="#" class="btn-amber-en d-block py-3 text-center" style="font-size:1rem;">Enroll Now &nbsp;→</a>
+                <div class="mt-4 pt-3 d-flex flex-column align-items-center gap-2" style="border-top:1px solid rgba(0,0,0,0.06);">
+                  <p class="text-muted small text-uppercase mb-0" style="font-size:0.70rem;font-weight:600;">100% Secure &amp; Encrypted</p>
+                  <span class="text-muted" style="font-size:0.8rem;opacity:0.5;">🔒 💳 🛡️</span>
+                </div>
+              </div>
+              <!-- Right -->
+              <div class="p-5 col-md-7 d-flex flex-column justify-content-center" style="border-left:1px solid rgba(0,0,0,0.05);">
+                <h5 class="text-dark mb-4 text-uppercase pb-3" style="font-size:0.9rem;letter-spacing:1px;border-bottom:1px solid rgba(0,0,0,0.07);">What's Included in your Ticket:</h5>
+                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                  {["7 Complete transformation modules","29 Guided meditations for every moment","14 Practical application workbooks","3 Expert conferences included","Lifetime access + future updates","Immediate access from any device"].map(f => (
+                    <li class="d-flex align-items-start">
+                      <span class="me-3 mt-1" style="color:#d97706;font-size:1.2rem;">✓</span>
+                      <span class="text-muted fw-light" style="font-size:1.05rem;font-family:'Inter',sans-serif;">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="py-5" style="background-color:transparent;">
+      <div class="container py-5 reveal" style="max-width:800px;margin:0 auto;">
+        <div class="text-center mb-5">
+          <span class="text-amber fw-bold text-uppercase small" style="letter-spacing:2px;">FAQ</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#1c1917;margin-top:1rem;">Have Questions?</h2>
+          <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
+        </div>
+        <div style="border:1px solid #e7e5e4;border-radius:1rem;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+          {faqs.map((faq, i) => (
+            <details class="faq-item-en bg-white" name="faq-en" open={i===0}>
+              <summary class="px-4 py-4 d-flex justify-content-between align-items-center" style="cursor:pointer;list-style:none;">
+                <span style="font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:300;color:#1c1917;">{faq.question}</span>
+                <span style="color:#d97706;font-size:1.4rem;line-height:1;">+</span>
+              </summary>
+              <div class="px-4 pb-4 bg-white">
+                <p style="font-family:'Inter',sans-serif;color:#78716c;font-weight:300;line-height:1.8;margin:0;">{faq.answer}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="bg-white py-5" style="border-top:1px solid rgba(217,119,6,0.1);">
+    <div class="container py-4">
+      <div class="row gy-5">
+        <div class="col-lg-5 col-md-12 pe-lg-5 reveal">
+          <h4 class="mb-3 text-dark text-uppercase" style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;letter-spacing:4px;">COEXPACE</h4>
+          <div style="width:40px;height:1px;background:#d97706;margin:0.5rem 0 1.5rem;"></div>
+          <p style="font-family:'Inter',sans-serif;color:#78716c;font-size:0.95rem;line-height:1.8;font-weight:300;margin-bottom:0.75rem;">COEXPACE is a global initiative that activates empathy, moral courage, and coexistence through immersive storytelling, education, and civic action.</p>
+          <p style="font-family:'Inter',sans-serif;color:#78716c;font-size:0.95rem;line-height:1.8;font-weight:300;">We create transformative experiences that challenge assumptions, spark critical dialogue, and help people act with integrity.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 reveal" style="transition-delay:100ms;">
+          <h5 class="mb-4 text-dark text-uppercase" style="font-size:0.9rem;letter-spacing:2px;font-family:'Inter',sans-serif;">Explore</h5>
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-0">
+            {[["Home","https://coexpace.org/"],["About Us","https://coexpace.org/about-us"],["COEXPACE Center","https://coexpace.org/coexpace-center"],["Summits & Exhibitions","https://coexpace.org/events"]].map(([label, href]) => (
+              <li><a href={href} class="text-muted text-decoration-none fw-light footer-link-en" style="font-family:'Inter',sans-serif;font-size:0.95rem;">{label}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 reveal" style="transition-delay:200ms;">
+          <h5 class="mb-4 text-dark text-uppercase" style="font-size:0.9rem;letter-spacing:2px;font-family:'Inter',sans-serif;">Contact</h5>
+          <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
+            <li><span class="text-muted fw-light" style="font-family:'Inter',sans-serif;">Miami, Florida</span></li>
+            <li><a href="mailto:contact@coexpace.org" class="text-muted text-decoration-none fw-light footer-link-en" style="font-family:'Inter',sans-serif;">contact@coexpace.org</a></li>
+          </ul>
+          <h5 class="mb-3 text-dark text-uppercase mt-4 pt-2" style="font-size:0.85rem;letter-spacing:2px;font-family:'Inter',sans-serif;">Follow Us</h5>
+          <div class="d-flex gap-3">
+            {[
+              { href:"https://instagram.com/coexpace", label:"Instagram", path:"M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.036 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" },
+              { href:"https://linkedin.com/company/coexpace", label:"LinkedIn", path:"M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S1.2 3.226 1.2 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" },
+              { href:"https://facebook.com/coexpace", label:"Facebook", path:"M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" },
+            ].map(social => (
+              <a href={social.href} target="_blank" class="social-icon-en text-muted text-decoration-none" aria-label={social.label}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d={social.path}/></svg>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div class="pt-4 mt-5 d-flex flex-column flex-md-row justify-content-between align-items-center" style="border-top:1px solid rgba(0,0,0,0.05);">
+        <p class="mb-0 text-muted small fw-light text-uppercase" style="letter-spacing:1.5px;font-size:0.75rem;font-family:'Inter',sans-serif;">© {new Date().getFullYear()} COEXPACE. All Rights Reserved.</p>
+        <div class="d-flex gap-4 mt-3 mt-md-0">
+          <a href="https://coexpace.org/privacy-policy" class="text-muted small text-decoration-none footer-link-en" style="font-family:'Inter',sans-serif;">Privacy Policy</a>
+          <a href="https://coexpace.org/terms-and-conditions" class="text-muted small text-decoration-none footer-link-en" style="font-family:'Inter',sans-serif;">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style is:global>
+  /* Hero */
+  .hero-en {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero-bg-en {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(250,248,245,0.9), rgba(250,248,245,0.6)), url('/images/hero_light.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    animation: slowZoom 20s ease-in-out infinite alternate;
+    transform: scale(1.02);
+  }
+  @keyframes slowZoom { 0% { transform: scale(1.02); } 100% { transform: scale(1.05); } }
+  .hero-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5.5rem;
+    font-weight: 500;
+    line-height: 1.05;
+    color: #1c1917;
+    text-shadow: 0 4px 15px rgba(255,255,255,0.8);
+    margin: 2rem 0 1.5rem;
+  }
+  .hero-sub-en {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+    color: #78716c;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+  }
+  .badge-pill-en {
+    letter-spacing: 3px;
+    color: #d97706;
+    border: 1px solid #d97706;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.7);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: 'Inter', sans-serif;
+  }
+  .text-amber { color: #d97706; }
+
+  /* Buttons */
+  .btn-amber-en {
+    display: inline-block;
+    background: #d97706;
+    color: #fff !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 16px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  .btn-amber-en:hover {
+    background: #b45309;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(217,119,6,0.4);
+  }
+
+  /* Light panels */
+  .light-panel {
+    background: #faf8f5;
+    border: 1px solid #e7e5e4;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    transition: all 0.3s ease;
+  }
+  .light-panel:hover {
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+  }
+
+  /* Slider */
+  .slider-wrapper-en {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .slider-fade-en {
+    position: absolute;
+    top: 0; height: 100%; width: 50px;
+    pointer-events: none; z-index: 2;
+  }
+  .slider-fade-en.right { right: 0; background: linear-gradient(to right, rgba(250,248,245,0), rgba(250,248,245,1)); }
+  .slider-fade-en.left  { left:  0; background: linear-gradient(to left,  rgba(250,248,245,0), rgba(250,248,245,1)); }
+  .magazine-slider-en {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .magazine-slider-en::-webkit-scrollbar { display: none; }
+  .magazine-card-en {
+    flex: 0 0 450px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    border-color: rgba(0,0,0,0.05);
+    height: 600px;
+    transition: all 0.3s ease;
+  }
+  .magazine-card-en:last-child { border-right: none !important; }
+
+  /* Pagination dots */
+  .en-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(217,119,6,0.3);
+    border: none; padding: 0;
+    transition: all 0.3s ease; cursor: pointer;
+  }
+  .en-dot.active { background: #d97706; width: 24px; border-radius: 4px; }
+
+  /* FAQ */
+  .faq-item-en {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  .faq-item-en:last-child { border-bottom: none; }
+  .faq-item-en summary { list-style: none; }
+  .faq-item-en summary::-webkit-details-marker { display: none; }
+  .faq-item-en[open] { background: #faf8f5 !important; }
+  .faq-item-en[open] summary { color: #d97706; }
+
+  /* Social icons */
+  .social-icon-en {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(0,0,0,0.1);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s ease;
+  }
+  .social-icon-en:hover { background: #d97706; color: white !important; border-color: #d97706; transform: translateY(-3px); }
+
+  /* Footer links */
+  .footer-link-en { transition: color 0.3s ease; }
+  .footer-link-en:hover { color: #d97706 !important; }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .hero-title-en { font-size: 3.5rem; }
+    .magazine-card-en { flex: 0 0 320px; height: 550px; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('enSlider');
+    if (!slider) return;
+
+    let isHovering = false;
+    slider.addEventListener('mouseenter', () => isHovering = true);
+    slider.addEventListener('mouseleave', () => isHovering = false);
+    slider.addEventListener('touchstart', () => isHovering = true, { passive: true });
+    slider.addEventListener('touchend', () => { setTimeout(() => isHovering = false, 2000); }, { passive: true });
+
+    const dots = document.querySelectorAll('.en-dot');
+    slider.addEventListener('scroll', () => {
+      const cardWidth = window.innerWidth <= 768 ? 320 : 450;
+      let idx = Math.round(slider.scrollLeft / cardWidth);
+      if (idx >= dots.length) idx = dots.length - 1;
+      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', (e) => {
+        isHovering = true;
+        setTimeout(() => isHovering = false, 4000);
+        const i = parseInt((e.target as HTMLElement).dataset.idx || '0');
+        const cardWidth = window.innerWidth <= 768 ? 320 : 450;
+        slider.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+      });
+    });
+
+    const auto = setInterval(() => {
+      if (!isHovering) {
+        const card = window.innerWidth <= 768 ? 320 : 450;
+        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 10) {
+          slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          slider.scrollBy({ left: card, behavior: 'smooth' });
+        }
+      }
+    }, 3500);
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => observer.observe(r));
+  });
+</script>

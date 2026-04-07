@@ -1,0 +1,44 @@
+---
+import faqData from '../data/faq.json';
+---
+<section class="faq-section py-5 position-relative z-1" style="background-color: transparent;">
+  <div class="container max-w-narrow reveal py-5">
+    <div class="text-center mb-5">
+       <span class="text-accent fw-bold text-uppercase tracking-wide small" style="letter-spacing: 2px;">FAQ</span>
+       <h2 class="display-4 text-dark mt-3" style="font-family: 'Cormorant Garamond', serif;">¿Tienes Dudas?</h2>
+       <div class="mx-auto mt-4" style="width: 40px; height: 1px; background-color: #d97706;"></div>
+    </div>
+    
+    <div class="accordion light-panel shadow-sm border border-secondary border-opacity-10 rounded-4 overflow-hidden" id="faqAccordion">
+      {faqData.map((faq, index) => (
+        <details class="accordion-item bg-white border-bottom" name="faq" open={index === 0}>
+           <summary class="accordion-header text-dark px-4 py-4 d-flex justify-content-between align-items-center" style="cursor: pointer;">
+            <span class="fs-5 fw-light">{faq.question}</span>
+            <span class="icon text-accent fs-4">+</span>
+          </summary>
+          <div class="accordion-content px-4 pb-4 bg-white">
+            <p class="text-muted fw-light lh-lg mb-0">{faq.answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+  .max-w-narrow { max-width: 800px; margin: 0 auto; }
+  
+  details[open] {
+      background: #faf8f5 !important;
+      .icon { transform: rotate(45deg); }
+      summary { color: $color-accent !important; }
+  }
+  
+  summary {
+    list-style: none;
+    &::-webkit-details-marker { display: none; }
+    transition: $transition-base;
+    &:hover { color: $color-accent !important; }
+  }
+</style>

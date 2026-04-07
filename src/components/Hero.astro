@@ -1,0 +1,98 @@
+---
+---
+<section class="hero-light d-flex align-items-center justify-content-center text-center" id="hero">
+  <div class="hero-bg"></div>
+  
+  <div class="container position-relative z-2 reveal">
+    <span class="badge text-uppercase tracking-wide mb-4 fw-light" style="letter-spacing: 3px; color: #d97706; border: 1px solid #d97706; padding: 6px 14px; background: rgba(255,255,255,0.7);">Edición Masterclass</span>
+    
+    <h1 class="hero-title display-1 mb-4 text-dark">
+      Encuentra tu <span class="text-accent" style="font-style: italic;">Calma</span><br/> en el Caos
+    </h1>
+    
+    <p class="hero-subtitle mx-auto mb-5 text-muted">
+      Un sistema premium diseñado para mujeres que hacen malabares con el trabajo, la familia y la ansiedad. Deja de vivir en piloto automático y recupera tu claridad mental hoy.
+    </p>
+    
+    <div class="d-flex flex-column align-items-center">
+       <a href="#checkout" class="btn btn-amber cta-btn mb-4 px-5 py-3">
+         Inscríbete Ahora
+       </a>
+       <p class="small text-muted" style="letter-spacing: 1px;"><span class="text-accent">★</span> Únete a cientos de mujeres que ya están transformando sus vidas</p>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+  
+  .hero-light {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    color: $color-text;
+    
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to right, rgba(250, 248, 245, 0.9), rgba(250, 248, 245, 0.6)), url('/images/hero_light.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; // Parallax effect
+      z-index: 0;
+      transform: scale(1.02);
+      animation: slowZoom 20s ease-in-out infinite alternate;
+    }
+    
+    .hero-title {
+      font-family: $font-primary;
+      font-weight: 500;
+      font-size: 5.5rem;
+      line-height: 1.05;
+      text-shadow: 0 4px 15px rgba(255,255,255,0.8);
+      
+      .text-accent { color: $color-accent; }
+    }
+    
+    .hero-subtitle {
+      font-family: $font-secondary;
+      font-size: 1.2rem;
+      font-weight: 400;
+      max-width: 600px;
+      line-height: 1.8;
+      color: $color-text-muted;
+    }
+    
+    .btn-amber {
+      background: $color-accent;
+      color: white;
+      font-family: $font-secondary;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border: none;
+      border-radius: 4px;
+      transition: $transition-smooth;
+      
+      &:hover {
+        background: $color-accent-hover;
+        transform: translateY(-2px);
+        box-shadow: $shadow-brand;
+        color: white;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title { font-size: 3.5rem; }
+      min-height: 90vh;
+    }
+  }
+  
+  @keyframes slowZoom {
+    0% { transform: scale(1.02); }
+    100% { transform: scale(1.05); }
+  }
+</style>

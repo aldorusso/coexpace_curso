@@ -1,0 +1,16 @@
+{
+  "title": "Oferta de Lanzamiento",
+  "price": 19,
+  "originalPrice": 29,
+  "currency": "USD",
+  "paymentType": "Pago único",
+  "features": [
+    "7 módulos completos de transformación",
+    "29 meditaciones guiadas para cada momento",
+    "14 cuadernos de aplicación práctica",
+    "3 conferencias con expertos incluidas",
+    "Acceso de por vida + futuras actualizaciones",
+    "Acceso inmediato desde cualquier dispositivo"
+  ],
+  "link": "#checkout"
+}

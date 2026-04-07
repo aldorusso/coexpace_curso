@@ -1,0 +1,104 @@
+---
+---
+<section class="bonuses-section py-5 position-relative z-1 bg-white">
+  <div class="container py-5">
+    <div class="text-center mb-5 reveal">
+      <span class="text-accent text-uppercase tracking-wide small fw-bold" style="letter-spacing: 2px;">Expertos Invitados</span>
+      <h2 class="display-4 text-dark mt-3" style="font-family: 'Cormorant Garamond', serif;">Masterclasses Incluidas</h2>
+      <div class="mx-auto mt-4 mb-4" style="width: 40px; height: 1px; background-color: #d97706;"></div>
+      <p class="text-muted fw-light">Desbloquea conocimientos exclusivos de especialistas de renombre mundial.</p>
+    </div>
+    
+    <div class="row g-4 mt-4">
+      <div class="col-md-4 reveal">
+        <div class="bonus-card h-100 p-5 rounded-4 bg-white shadow-sm position-relative overflow-hidden group">
+          <div class="bonus-num text-accent opacity-25 display-1 position-absolute top-0 end-0 me-4 mt-2" style="font-family: 'Cormorant Garamond', serif;">01</div>
+          
+          <div class="expert-avatar-container">
+            <div class="avatar-backdrop"></div>
+            <img src="https://coexpace.org/_next/image?url=%2Fhome%2Fevents%2Fspeakers%2Fmember-6.webp&w=256&q=75" alt="Dr. Edith Shiro" class="avatar-img">
+          </div>
+          
+          <h4 class="text-dark position-relative z-1" style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;">Dr. Edith Shiro</h4>
+          <p class="text-accent small text-uppercase tracking-wide mt-3 mb-4 position-relative z-1">El Camino del Dolor al Propósito</p>
+          <p class="text-muted fw-light position-relative z-1 lh-lg">Una conferencia profunda sobre cómo transformar el dolor en propósito de vida, con profundidad clínica.</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay: 100ms">
+        <div class="bonus-card h-100 p-5 rounded-4 bg-white shadow-sm position-relative overflow-hidden group">
+          <div class="bonus-num text-accent opacity-25 display-1 position-absolute top-0 end-0 me-4 mt-2" style="font-family: 'Cormorant Garamond', serif;">02</div>
+          
+          <div class="expert-avatar-container">
+            <div class="avatar-backdrop"></div>
+            <img src="https://coexpace.org/_next/image?url=%2Fhome%2Fevents%2Fspeakers%2Fmember-7.webp&w=256&q=75" alt="Dr. Manuel Ortega" class="avatar-img">
+          </div>
+          
+          <h4 class="text-dark position-relative z-1" style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;">Dr. Manuel Ortega</h4>
+          <p class="text-accent small text-uppercase tracking-wide mt-3 mb-4 position-relative z-1">Ansiedad y Depresión</p>
+          <p class="text-muted fw-light position-relative z-1 lh-lg">Claves para entender y manejar la ansiedad desde una perspectiva clínica y humana.</p>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay: 200ms">
+        <div class="bonus-card h-100 p-5 rounded-4 bg-white shadow-sm position-relative overflow-hidden group">
+           <div class="bonus-num text-accent opacity-25 display-1 position-absolute top-0 end-0 me-4 mt-2" style="font-family: 'Cormorant Garamond', serif;">03</div>
+          
+          <div class="expert-avatar-container">
+            <div class="avatar-backdrop"></div>
+            <img src="https://coexpace.org/_next/image?url=%2Fhome%2Fevents%2Fspeakers%2Fmember-10.webp&w=256&q=75" alt="Dr. Ángel Oropeza" class="avatar-img">
+          </div>
+          
+          <h4 class="text-dark position-relative z-1" style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem;">Dr. Ángel Oropeza</h4>
+          <p class="text-accent small text-uppercase tracking-wide mt-3 mb-4 position-relative z-1">Raíces del Fanatismo</p>
+          <p class="text-muted fw-light position-relative z-1 lh-lg">Un análisis revelador de los orígenes del fanatismo y el bienestar emocional.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  @import '../styles/variables.scss';
+  .bonus-card {
+    border: 1px solid $color-border;
+    transition: $transition-smooth;
+    
+    &:hover { border-color: rgba(217,119,6,0.3); box-shadow: $shadow-md; transform: translateY(-5px); }
+  }
+  
+  .expert-avatar-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+    z-index: 1;
+    
+    .avatar-backdrop {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      background: rgba(217,119,6,0.15);
+      border-radius: 50%; /* Figura totalmente redonda */
+      top: -5px;
+      left: -15px; /* Desplazado para dar efecto capa */
+      z-index: 0;
+      transition: transform 0.4s ease;
+    }
+    
+    .avatar-img {
+      position: relative;
+      z-index: 1;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    
+    &:hover {
+       /* Solo desplazamiento sutil, cero cambios de tamaño */
+       .avatar-backdrop { transform: translate(-4px, -4px); }
+       .avatar-img { transform: translateY(-4px); box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08); }
+    }
+  }
+</style>
