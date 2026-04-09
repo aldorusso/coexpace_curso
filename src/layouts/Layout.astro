@@ -25,28 +25,46 @@ const { title } = Astro.props;
 	<body style="background-color: #faf8f5; color: #292524;">
 		<slot />
         
-        <script>
-            // Smooth reveal animation
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-            
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-            
-            document.addEventListener('DOMContentLoaded', () => {
-                document.querySelectorAll('.reveal').forEach((element) => {
-                    observer.observe(element);
-                });
-            });
+        <script is:inline>
+            // Enable JS-driven reveals (CSS default is visible, so if this script
+            // fails to load the page still shows all content).
+            (function () {
+                var html = document.documentElement;
+                html.classList.add('js-reveal-ready');
+
+                function activateAll() {
+                    var els = document.querySelectorAll('.reveal');
+                    for (var i = 0; i < els.length; i++) els[i].classList.add('active');
+                }
+
+                // Failsafe: never leave the page hidden for more than 2.5s.
+                var failsafe = setTimeout(activateAll, 2500);
+
+                function init() {
+                    if (!('IntersectionObserver' in window)) { activateAll(); return; }
+                    var observer = new IntersectionObserver(function (entries, obs) {
+                        entries.forEach(function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('active');
+                                obs.unobserve(entry.target);
+                            }
+                        });
+                    }, { root: null, rootMargin: '0px', threshold: 0.15 });
+
+                    document.querySelectorAll('.reveal').forEach(function (el) {
+                        observer.observe(el);
+                    });
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', init);
+                } else {
+                    init();
+                }
+
+                // Cancel failsafe once normal flow is wired.
+                window.addEventListener('load', function () { clearTimeout(failsafe); });
+            })();
         </script>
 	</body>
 </html>

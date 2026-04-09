@@ -1,6 +1,11 @@
 # Build stage
 FROM node:22-alpine AS build
 WORKDIR /app
+
+# Build-time public env var (Astro inlines PUBLIC_* at build time)
+ARG PUBLIC_API_URL
+ENV PUBLIC_API_URL=$PUBLIC_API_URL
+
 COPY package*.json ./
 RUN npm ci
 COPY . .

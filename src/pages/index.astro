@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 
+const apiUrl = import.meta.env.PUBLIC_API_URL || 'https://api-courses.coexpace.org';
+const courseId = 5;
+
 const modules = [
   { order: 1, title: "Introducción y Fundamentos", description: "Comenzamos por entender dónde estás hoy...", body: "Comenzamos por entender dónde estás hoy y por qué tu mente no se detiene.\nEjercicios prácticos para empezar a notar tus patrones automáticos.\nDa el primer paso hacia la presencia consciente." },
   { order: 2, title: "Postura, Respiración y Actitud", description: "Los cimientos de tu práctica.", body: "Aprende a usar tu cuerpo y respiración para establecer una base sólida.\nDescubre los tres pilares de una práctica de meditación diaria sostenible.\nCalibra tu mentalidad para una transformación duradera." },
@@ -293,7 +296,8 @@ const faqs = [
                   <span class="text-muted fw-bold me-2" style="font-size:1.25rem;">USD</span>
                   <span style="font-family:'Cormorant Garamond',serif;font-size:5.5rem;letter-spacing:-3px;font-weight:300;color:#1c1917;">19</span>
                 </div>
-                <a href="#" class="btn-amber-en d-block py-3 text-center" style="font-size:1rem;">Inscríbete Ahora &nbsp;→</a>
+                <a href="#" class="btn-amber-en d-block py-3 text-center js-enroll-btn" data-original-text="Inscríbete Ahora &nbsp;→" style="font-size:1rem;">Inscríbete Ahora &nbsp;→</a>
+                <p class="text-danger small mt-2 mb-0 js-enroll-error" style="display:none;font-size:0.8rem;"></p>
                 <div class="mt-4 pt-3 d-flex flex-column align-items-center gap-2" style="border-top:1px solid rgba(0,0,0,0.06);">
                   <p class="text-muted small text-uppercase mb-0" style="font-size:0.70rem;font-weight:600;">100% Seguro y Encriptado</p>
                   <span class="text-muted" style="font-size:0.8rem;opacity:0.5;">🔒 💳 🛡️</span>
@@ -640,5 +644,49 @@ const faqs = [
         }
       }
     }, 3500);
+  });
+</script>
+
+<script define:vars={{ apiUrl, courseId }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.js-enroll-btn');
+    const errorEl = document.querySelector('.js-enroll-error');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        if (btn.dataset.loading === '1') return;
+
+        if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
+        btn.dataset.loading = '1';
+        btn.style.pointerEvents = 'none';
+        btn.style.opacity = '0.75';
+        btn.innerHTML = 'Procesando…';
+
+        try {
+          const res = await fetch(`${apiUrl}/api/payments/guest-checkout-session`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ course_id: courseId }),
+          });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          if (!data.checkout_url) throw new Error('Respuesta inválida del servidor.');
+          window.location.href = data.checkout_url;
+        } catch (err) {
+          console.error('[enroll]', err);
+          btn.dataset.loading = '';
+          btn.style.pointerEvents = '';
+          btn.style.opacity = '';
+          btn.innerHTML = btn.dataset.originalText || 'Inscríbete Ahora →';
+          if (errorEl) {
+            errorEl.textContent = 'No pudimos iniciar el pago. Intenta de nuevo en unos segundos.';
+            errorEl.style.display = 'block';
+          } else {
+            alert('No pudimos iniciar el pago. Intenta de nuevo en unos segundos.');
+          }
+        }
+      });
+    });
   });
 </script>

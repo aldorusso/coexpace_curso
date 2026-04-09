@@ -77,14 +77,20 @@ img {
   }
 }
 
-/* Animations */
+/* Animations — progressive enhancement: visible by default, hidden only when JS has taken control */
 .reveal {
-  opacity: 0;
-  transform: translateY(30px);
+  opacity: 1;
+  transform: none;
   transition: $transition-smooth;
 }
 
-.reveal.active {
+.js-reveal-ready .reveal:not(.active) {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.reveal.active,
+.reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
