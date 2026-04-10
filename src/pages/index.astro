@@ -61,10 +61,10 @@ const faqs = [
             <div class="row g-4 text-center">
               {[["7","Módulos","de transformación"],["14","Cuadernos","aplicación en el mundo real"],["29","Audios","meditaciones guiadas"]].map(([num,label,sub]) => (
                 <div class="col-sm-4">
-                  <div class="light-panel p-4 h-100 bg-white shadow-sm" style="border-top:2px solid rgba(217,119,6,0.4);border:1px solid #e7e5e4;border-radius:4px;">
-                    <span class="d-block display-3 text-dark mb-2" style="font-family:'Cormorant Garamond',serif;">{num}</span>
-                    <strong class="d-block fs-6 text-amber text-uppercase" style="letter-spacing:1px;">{label}</strong>
-                    <span class="text-muted small fst-italic">{sub}</span>
+                  <div class="p-4 h-100 bg-white text-center" style="border:1px solid #e7e5e4;border-top:2.5px solid #d97706;border-radius:6px;box-shadow:0 2px 12px rgba(0,0,0,0.05);">
+                    <span class="d-block text-dark" style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;line-height:1;margin-bottom:0.5rem;">{num}</span>
+                    <strong class="d-block text-uppercase" style="font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:2px;color:#d97706;margin-bottom:0.3rem;">{label}</strong>
+                    <span style="font-family:'Inter',sans-serif;font-size:0.8rem;color:#a8a29e;font-style:italic;">{sub}</span>
                   </div>
                 </div>
               ))}
@@ -74,26 +74,59 @@ const faqs = [
       </div>
     </section>
 
-    <!-- ===== TESTIMONIAL ===== -->
-    <section class="py-5" style="background-color:transparent;">
-      <div class="container py-5 reveal">
-        <div class="text-center mb-5">
-          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.3rem;font-weight:400;color:#1c1917;">Mujeres Reales. Transformaciones Reales.</h2>
+    <!-- ===== TESTIMONIALS ===== -->
+    <section class="testi-section-es py-5">
+      <div class="container py-5">
+
+        <div class="text-center mb-5 pb-2 reveal">
+          <span class="text-amber fw-bold text-uppercase small" style="letter-spacing:2px;">Lo Que Dicen Ellas</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:#1c1917;margin-top:0.75rem;">Mujeres Reales. Transformaciones Reales.</h2>
           <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-md-8 col-lg-7">
-            <div class="p-5 position-relative bg-white shadow-sm text-center" style="border-radius:1rem;border:1px solid #e7e5e4;">
-              <div style="position:absolute;top:10px;right:30px;font-family:'Cormorant Garamond',serif;font-size:6rem;color:#d97706;opacity:0.2;line-height:1;">"</div>
-              <div class="d-flex flex-column align-items-center mb-4 position-relative z-1">
-                <img src="/images/student.png" alt="Sarah J." class="rounded-circle mb-3" width="80" height="80" style="object-fit:cover;border:2px solid rgba(217,119,6,0.3);">
-                <h5 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:#1c1917;margin:0 0 4px;">Sarah Jenkins</h5>
-                <span style="color:#d97706;font-size:0.8rem;text-transform:uppercase;letter-spacing:1px;font-family:'Inter',sans-serif;">Directora de Marketing</span>
-              </div>
-              <p style="font-family:'Inter',sans-serif;font-size:1.05rem;color:#78716c;font-style:italic;line-height:1.8;position:relative;z-index:1;margin:0;">"La mejor inversión que he hecho. Mis reacciones impulsivas han disminuido significativamente y mi relación con el estrés en el trabajo cambió por completo. Las herramientas son realmente aplicables durante un día ocupado."</p>
+
+        <!-- Featured testimonial -->
+        <div class="row justify-content-center mb-4 reveal">
+          <div class="col-lg-9">
+            <div class="testi-featured-es position-relative">
+              <div class="testi-bigquote-es">"</div>
+              <div class="testi-stars-es mb-4">★★★★★</div>
+              <p style="font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;font-style:italic;color:#1c1917;line-height:1.75;margin:0 0 2rem;position:relative;z-index:1;">
+                "Cada sesión siento que he trabajado un aspecto diferente de mi vida. He adquirido una valiosa herramienta para controlar mis emociones — y no ellas a mí. La guía de Vivían me ayudó a enfrentar situaciones de crisis y a encontrarme a mí misma."
+              </p>
+              <p style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;color:#1c1917;margin:0;line-height:1.2;">— María José</p>
             </div>
           </div>
         </div>
+
+        <!-- Three compact cards -->
+        <div class="row g-4 justify-content-center">
+          {[
+            {
+              quote: "La meditación le dio un nuevo giro a mi vida. Me ayudó a encontrar paz interior en momentos de angustia, a darle color a lo que está en blanco y negro — y lo más importante, a encontrarme a mí misma para encontrar mi propia felicidad.",
+              name: "Paulina R.",
+              initial: "P"
+            },
+            {
+              quote: "He sentido muchos cambios al aprender a meditar, a respirar y a vivir en el momento presente. Lo he aplicado con mis hijos también — los cambios que han hecho son increíbles. Este es un curso muy efectivo.",
+              name: "Lucy Penhos",
+              initial: "L"
+            },
+            {
+              quote: "Durante muchos años lo intenté con varios maestros y nunca logré entender el fondo de este gran regalo que es meditar — hasta Vivían. Vivir en el aquí y ahora es sanador. Lo recomiendo profundamente.",
+              name: "Diana S.",
+              initial: "D"
+            },
+          ].map(({ quote, name, initial }, i) => (
+            <div class="col-md-4 reveal" style={`transition-delay:${i * 100}ms`}>
+              <div class="testi-card-es h-100 d-flex flex-column">
+                <div class="testi-stars-es mb-3" style="font-size:0.85rem;">★★★★★</div>
+                <p style="font-family:'Inter',sans-serif;font-size:0.95rem;color:#57534e;font-style:italic;line-height:1.8;flex:1;margin:0 0 1.5rem;">"{quote}"</p>
+                <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:500;color:#1c1917;margin:0;">— {name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
       </div>
     </section>
 
@@ -132,7 +165,7 @@ const faqs = [
           <div style="width:40px;height:1px;background:#d97706;margin:1.2rem auto 0;"></div>
         </div>
         <div class="row g-0 reveal" style="border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 4px 30px rgba(0,0,0,0.06);">
-          <div class="col-md-6" style="padding:60px 50px;background:#faf8f5;border-right:1px solid #e7e5e4;">
+          <div class="col-md-6 transf-panel-es" style="background:#faf8f5;border-right:1px solid #e7e5e4;">
             <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#78716c;margin-bottom:2.5rem;">Antes (El Caos)</h3>
             <ul class="list-unstyled">
               {["Sobrecarga y ansiedad constante","Insomnio y agotamiento","Reacciones explosivas","Desconexión total"].map(item => (
@@ -140,7 +173,7 @@ const faqs = [
               ))}
             </ul>
           </div>
-          <div class="col-md-6" style="padding:60px 50px;background:#fff;position:relative;">
+          <div class="col-md-6 transf-panel-es" style="background:#fff;position:relative;">
             <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at top right,rgba(217,119,6,0.05),transparent);pointer-events:none;"></div>
             <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#d97706;margin-bottom:2.5rem;">Después (Mente en Paz)</h3>
             <ul class="list-unstyled position-relative" style="z-index:1;">
@@ -186,11 +219,6 @@ const faqs = [
           <div class="slider-fade-en right"></div>
           <div class="slider-fade-en left"></div>
         </div>
-        <div class="d-flex justify-content-center gap-2 mt-4" id="esPagination">
-          {modules.map((_, i) => (
-            <button class={`es-dot ${i===0?'active':''}`} data-idx={i} aria-label={`Slide ${i+1}`}></button>
-          ))}
-        </div>
       </div>
     </section>
 
@@ -199,10 +227,7 @@ const faqs = [
       <div class="container py-5 reveal">
         <div class="row align-items-center">
           <div class="col-lg-5 mb-5 mb-lg-0">
-            <div class="position-relative">
-              <div class="position-absolute w-100 h-100" style="top:-15px;left:-15px;z-index:0;background:#faf8f5;border:1px solid rgba(0,0,0,0.1);"></div>
-              <img src="/images/vivian.webp" alt="Vivian Toussieh" class="img-fluid position-relative shadow-md" style="object-fit:cover;aspect-ratio:4/5;width:100%;border:4px solid white;border-radius:4px;z-index:1;">
-            </div>
+            <img src="/images/vivian.webp" alt="Vivian Toussieh" style="width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:8px;box-shadow:0 8px 32px rgba(0,0,0,0.10);">
           </div>
           <div class="col-lg-7 px-lg-5">
             <span class="text-amber text-uppercase small fw-bold" style="letter-spacing:2px;">Tu Guía</span>
@@ -290,7 +315,7 @@ const faqs = [
                 <h3 class="fw-normal mb-4 text-dark text-uppercase" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:1px;">Ticket de Por Vida</h3>
                 <div class="mb-4">
                   <span class="text-muted d-block mb-2" style="text-decoration:line-through;">Antes $29</span>
-                  <span class="px-3 py-1 small fw-bold text-uppercase" style="background:#d97706;color:#fff;letter-spacing:1px;border-radius:3px;">Oferta Lanzamiento</span>
+                  <span class="px-3 py-1 small fw-bold text-uppercase" style="background:#3d6b4f;color:#fff;letter-spacing:1px;border-radius:3px;">Oferta Lanzamiento</span>
                 </div>
                 <div class="d-flex justify-content-center align-items-baseline mb-4" style="line-height:1;">
                   <span class="text-muted fw-bold me-2" style="font-size:1.25rem;">USD</span>
@@ -448,6 +473,65 @@ const faqs = [
   }
   .text-amber { color: #d97706; }
 
+  /* Testimonials */
+  .testi-section-es {
+    background: linear-gradient(160deg, #fdf8f2 0%, #faf6ef 100%);
+  }
+  .testi-featured-es {
+    background: #fff;
+    border-radius: 1.25rem;
+    border: 1px solid rgba(217,119,6,0.15);
+    box-shadow: 0 8px 40px rgba(217,119,6,0.07);
+    padding: 3.5rem;
+    overflow: hidden;
+  }
+  .testi-bigquote-es {
+    position: absolute;
+    top: -10px;
+    left: 28px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10rem;
+    font-weight: 300;
+    line-height: 1;
+    color: #d97706;
+    opacity: 0.09;
+    user-select: none;
+    z-index: 0;
+  }
+  .testi-stars-es {
+    color: #d97706;
+    font-size: 1rem;
+    letter-spacing: 3px;
+  }
+  .testi-avatar-es {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(217,119,6,0.08);
+    border: 1.5px solid rgba(217,119,6,0.3);
+    flex-shrink: 0;
+  }
+  .testi-card-es {
+    background: #fff;
+    border-radius: 1rem;
+    border: 1px solid #ede9e3;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    transition: $transition-smooth;
+    &:hover {
+      border-color: rgba(217,119,6,0.25);
+      box-shadow: 0 6px 28px rgba(217,119,6,0.10);
+      transform: translateY(-4px);
+    }
+  }
+  .testi-avatar-sm-es {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(217,119,6,0.08);
+    border: 1px solid rgba(217,119,6,0.25);
+  }
+
   /* Buttons */
   .btn-amber-en {
     display: inline-block;
@@ -560,15 +644,6 @@ const faqs = [
   }
   .magazine-card-es:last-child { border-right: none !important; }
 
-  /* Spanish pagination dots */
-  .es-dot {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: rgba(217,119,6,0.3);
-    border: none; padding: 0;
-    transition: all 0.3s ease; cursor: pointer;
-  }
-  .es-dot.active { background: #d97706; width: 24px; border-radius: 4px; }
-
   /* Pricing layout fix */
   .pricing-card-es {
     display: flex;
@@ -597,51 +672,107 @@ const faqs = [
     transform: translateY(0);
   }
 
-  /* Mobile */
-  @media (max-width: 768px) {
-    .hero-title-en { font-size: 3rem; }
-    .magazine-card-es { flex: 0 0 300px; }
+  .transf-panel-es { padding: 60px 50px; }
+
+  /* ===== MOBILE ===== */
+  @media (max-width: 767px) {
+
+    /* Do NOT override .container, .row, or col-* padding — Bootstrap's grid margins are balanced */
+
+    /* Hero */
+    .hero-en { min-height: 90svh; align-items: flex-start; padding-top: 7rem; padding-bottom: 3rem; }
+    .hero-bg-en {
+      background-attachment: scroll; /* fixed breaks on iOS */
+      background-image: linear-gradient(to bottom, rgba(250,248,245,0.85), rgba(250,248,245,0.7)), url('/images/hero_light.png');
+    }
+    .hero-title-en { font-size: 2.5rem; margin: 1rem 0 0.75rem; }
+    .hero-sub-en { font-size: 0.95rem; margin-bottom: 2rem; padding: 0 0.5rem; }
+    .badge-pill-en { font-size: 0.65rem; letter-spacing: 2px; }
+
+    /* Sections — consistent vertical rhythm */
+    section.py-5 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+    section.py-5.my-5 { margin-top: 0 !important; margin-bottom: 0 !important; }
+    section.py-5.my-3 { margin-top: 0 !important; margin-bottom: 0 !important; }
+    .container.py-5 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+    .container.py-4 { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
+
+    /* Social proof section */
+    .col-sm-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+    .col-sm-4 .p-4 { padding: 0.75rem 0.5rem !important; }
+    .col-sm-4 span[style*="3.5rem"] { font-size: 2rem !important; }
+    .col-sm-4 strong { font-size: 0.6rem !important; letter-spacing: 1px !important; }
+    .col-sm-4 span[style*="0.8rem"] { font-size: 0.65rem !important; }
+
+    /* Problem/solution cards */
+    .light-panel.p-5 { padding: 1.5rem 1.25rem !important; }
+    .light-panel h4 { font-size: 1.6rem !important; }
+
+    /* Transformation */
+    .transf-panel-es { padding: 1.75rem 1.25rem !important; }
+
+    /* Module slider */
+    .magazine-card-es { flex: 0 0 82vw; }
+
+    /* Featured testimonial */
+    .testi-section-es .container { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+    .testi-featured-es { padding: 1.75rem 1.25rem !important; }
+    .testi-bigquote-es { font-size: 6rem; left: 16px; }
+    .testi-featured-es p[style*="1.55rem"] { font-size: 1.15rem !important; }
+
+    /* Testimonial compact cards */
+    .testi-card-es { padding: 1.25rem !important; }
+    .testi-card-es p[style*="0.95rem"] { font-size: 0.9rem !important; }
+
+    /* Instructor */
+    .col-lg-5 img[style*="aspect-ratio:1/1"] { aspect-ratio: 4/3 !important; border-radius: 6px !important; }
+
+    /* Masterclass expert cards — reduce padding */
+    .col-md-4 .p-5 { padding: 1.5rem 1.25rem !important; }
+    .col-md-4 .p-5 h4 { font-size: 1.5rem !important; }
+
+    /* Pricing */
+    .pricing-card-es .p-5,
+    .pricing-left-es.p-5,
+    .pricing-right-es.p-5 { padding: 1.75rem 1.25rem !important; }
+    .pricing-card-es [style*="5.5rem"] { font-size: 4rem !important; }
+
+    /* Steps — center cards on mobile */
+    .step-card-es { padding: 1.75rem 1.25rem !important; max-width: 400px; margin: 0 auto; }
+    .step-card-es div[style*="4.5rem"] { font-size: 3.5rem !important; }
+
+    /* FAQ */
+    .faq-item-en summary { padding: 1rem 1.25rem !important; }
+    .faq-item-en .px-4 { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+
+    /* Footer */
+    footer .col-lg-5 { margin-bottom: 1.5rem; }
+    footer h4[style*="1.8rem"] { font-size: 1.5rem !important; }
+
+    /* Headings — proportional scale */
+    h2[style*="2.8rem"] { font-size: 1.85rem !important; }
+    h2[style*="2.5rem"] { font-size: 1.7rem !important; }
+    h2[style*="3.5rem"] { font-size: 2rem !important; }
+
   }
 </style>
+
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const slider = document.getElementById('esSlider');
     if (!slider) return;
-
     let isHovering = false;
     slider.addEventListener('mouseenter', () => { isHovering = true; });
     slider.addEventListener('mouseleave', () => { isHovering = false; });
     slider.addEventListener('touchstart', () => { isHovering = true; }, { passive: true });
     slider.addEventListener('touchend', () => { setTimeout(() => { isHovering = false; }, 2000); }, { passive: true });
-
-    const dots = document.querySelectorAll('.es-dot');
     const cardWidth = () => window.innerWidth <= 768 ? 300 : 400;
-
-    slider.addEventListener('scroll', () => {
-      let idx = Math.round(slider.scrollLeft / cardWidth());
-      if (idx >= dots.length) idx = dots.length - 1;
-      dots.forEach((d, i) => d.classList.toggle('active', i === idx));
-    });
-
-    dots.forEach(dot => {
-      dot.addEventListener('click', (e) => {
-        isHovering = true;
-        setTimeout(() => { isHovering = false; }, 4000);
-        const target = e.target;
-        const i = parseInt(target.dataset.idx || '0');
-        slider.scrollTo({ left: i * cardWidth(), behavior: 'smooth' });
-      });
-    });
-
-    const auto = setInterval(() => {
-      if (!isHovering) {
-        const cw = cardWidth();
-        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 10) {
-          slider.scrollTo({ left: 0, behavior: 'smooth' });
-        } else {
-          slider.scrollBy({ left: cw, behavior: 'smooth' });
-        }
+    setInterval(() => {
+      if (isHovering) return;
+      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 10) {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: cardWidth(), behavior: 'smooth' });
       }
     }, 3500);
   });
