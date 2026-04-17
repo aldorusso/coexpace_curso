@@ -13,8 +13,16 @@ RUN npm ci
 COPY . .
 RUN npm run build
 
-# Serve stage — only the padres-empoderadores subdirectory
+# Rearrange: promote /padres-empoderadores/ to root, drop meditation pages,
+# KEEP shared assets (_astro/, images/, favicon.svg, etc.)
+RUN rm -f /app/dist/index.html \
+ && rm -rf /app/dist/en \
+ && mv /app/dist/padres-empoderadores/index.html /app/dist/index.html \
+ && mv /app/dist/padres-empoderadores/en /app/dist/en \
+ && rm -rf /app/dist/padres-empoderadores
+
+# Serve stage
 FROM nginx:alpine
-COPY --from=build /app/dist/padres-empoderadores /usr/share/nginx/html
+COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
