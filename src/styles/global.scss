@@ -1,6 +1,10 @@
 @import 'bootstrap/scss/bootstrap-grid';
 @import './variables.scss';
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 18px; /* ↑ from 16px — scales ALL rem values proportionally */
 }
