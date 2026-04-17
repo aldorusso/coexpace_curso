@@ -1,6 +1,10 @@
 @import 'bootstrap/scss/bootstrap-grid';
 @import './padres-variables.scss';
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 18px;
 }
