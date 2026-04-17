@@ -1,0 +1,20 @@
+# Build stage
+FROM node:22-alpine AS build
+WORKDIR /app
+
+# Build-time public env vars (Astro inlines PUBLIC_* at build time)
+ARG PUBLIC_API_URL
+ARG PUBLIC_PADRES_COURSE_ID
+ENV PUBLIC_API_URL=$PUBLIC_API_URL
+ENV PUBLIC_PADRES_COURSE_ID=$PUBLIC_PADRES_COURSE_ID
+
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+# Serve stage — only the padres-empoderadores subdirectory
+FROM nginx:alpine
+COPY --from=build /app/dist/padres-empoderadores /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

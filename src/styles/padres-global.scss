@@ -1,0 +1,103 @@
+@import 'bootstrap/scss/bootstrap-grid';
+@import './padres-variables.scss';
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $pe-font-secondary;
+  background-color: $pe-bg;
+  color: $pe-text;
+  scroll-behavior: smooth;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $pe-font-primary;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+  color: $pe-text;
+}
+
+p, li, span, label {
+  font-family: $pe-font-secondary;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.small, small {
+  font-size: 0.85rem;
+}
+
+a {
+  text-decoration: none;
+  color: $pe-accent;
+  transition: $pe-transition-base;
+
+  &:hover {
+    color: $pe-accent-hover;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.text-center { text-align: center; }
+.text-accent { color: $pe-accent !important; }
+.text-gold { color: $pe-accent !important; }
+.text-rust { color: $pe-rust !important; }
+
+.btn-gold {
+  display: inline-block;
+  background: $pe-accent;
+  color: #fff !important;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 16px 40px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: $pe-transition-base;
+  box-shadow: $pe-shadow-md;
+
+  &:hover {
+    background: $pe-accent-hover;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: $pe-shadow-brand;
+  }
+}
+
+/* Reveal animations — progressive enhancement */
+.reveal {
+  opacity: 1;
+  transform: none;
+  transition: $pe-transition-smooth;
+}
+.js-reveal-ready .reveal:not(.active) {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.reveal.active,
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Bootstrap overrides */
+.fs-5 { font-size: 1.1rem !important; }
+.fs-6 { font-size: 0.95rem !important; }
+.display-3 { font-size: 3.5rem !important; }
+.display-4 { font-size: 2.5rem !important; }
+.display-5 { font-size: 2rem !important; }

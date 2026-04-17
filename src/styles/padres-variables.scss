@@ -1,0 +1,37 @@
+/* Padres Empoderadores — EPI palette (warm earth + golden yellow) */
+
+$pe-font-primary: 'Cormorant Garamond', serif;
+$pe-font-secondary: 'Inter', sans-serif;
+
+/* Warm cream backgrounds */
+$pe-bg: #fbf6ec;           // Soft cream
+$pe-bg-alt: #f5ebdc;       // Deeper cream for contrast sections
+$pe-surface: #ffffff;
+
+/* Text — deep warm brown */
+$pe-text: #2a2317;
+$pe-text-muted: #6b5d48;
+$pe-text-soft: #8f7f65;
+
+/* Accent — golden yellow (from cover underline) */
+$pe-accent: #d4a235;
+$pe-accent-hover: #b58829;
+$pe-accent-soft: #e8b84a;
+
+/* Secondary warm — terracotta/rust for emphasis */
+$pe-rust: #a85a3f;
+$pe-rust-soft: #c47b5a;
+
+/* Borders */
+$pe-border: #e8dec9;
+$pe-border-soft: #f0e8d6;
+
+/* Shadows */
+$pe-shadow-sm: 0 4px 6px -1px rgba(42, 35, 23, 0.06), 0 2px 4px -1px rgba(42, 35, 23, 0.04);
+$pe-shadow-md: 0 10px 15px -3px rgba(42, 35, 23, 0.08), 0 4px 6px -2px rgba(42, 35, 23, 0.05);
+$pe-shadow-lg: 0 20px 25px -5px rgba(42, 35, 23, 0.10), 0 10px 10px -5px rgba(42, 35, 23, 0.05);
+$pe-shadow-brand: 0 10px 30px rgba(212, 162, 53, 0.22);
+
+/* Transitions */
+$pe-transition-base: all 0.3s ease-in-out;
+$pe-transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);

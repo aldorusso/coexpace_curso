@@ -1,0 +1,862 @@
+---
+import LayoutPadres from '../../../layouts/LayoutPadres.astro';
+import NavbarPadres from '../../../components/NavbarPadres.astro';
+
+const apiUrl = import.meta.env.PUBLIC_API_URL || 'https://api-courses.coexpace.org';
+const courseId = Number(import.meta.env.PUBLIC_PADRES_COURSE_ID || 0);
+
+const modules = [
+  {
+    n: 1,
+    title: "What Doesn't Work",
+    description: "Common mistakes that make things worse.",
+    bullets: [
+      "The traditional advice (\"fight back\", \"ignore it\") that actually fails",
+      "Well-meaning phrases that make your child feel worse",
+      "How to avoid \"self-bullying\" — when your child turns on themselves",
+    ],
+    thumb: "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M1L1.png",
+  },
+  {
+    n: 2,
+    title: "How to Intervene Properly",
+    description: "The adult's role according to the EPI method.",
+    bullets: [
+      "The importance of your adult presence — beyond giving advice",
+      "Listening without judgment: what helps most, according to kids themselves",
+      "How to follow up without invading or abandoning",
+    ],
+    thumb: "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M2L1.png",
+  },
+  {
+    n: 3,
+    title: "Strategies That Actually Work",
+    description: "Real, applicable tools you can use today.",
+    bullets: [
+      "How to empower your child from within",
+      "Concrete responses to bullying",
+      "Strengthen their self-esteem with daily actions",
+    ],
+    thumb: "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M3L1.png",
+  },
+];
+
+const lessonThumbs = [
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M0Intro.png",
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M1L1.png",
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M1L2.png",
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M1L3.png",
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M1L4.png",
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M1L5.png",
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M2L1.png",
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M2L2.png",
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M2L3.png",
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M2L4.png",
+  "/images/padres/CXP_LRNG_CPE_THUMBNAIL_YT_M3L1.png",
+];
+
+const faqs = [
+  { q: "Is this only for severe bullying cases?", a: "No. The method works for mild to complex situations. It's also useful as prevention." },
+  { q: "Can I apply this even if my child doesn't talk much?", a: "Yes. Part of the course is dedicated to generating emotional openness without forcing conversation." },
+  { q: "Does it work for teenagers?", a: "Yes. The approach is adaptable across ages — it adjusts to the language and dynamics of each stage." },
+  { q: "Do I need any prior knowledge?", a: "None. The course is designed for any parent or caregiver, no technical background required." },
+  { q: "How long do I have access?", a: "Lifetime access. You can revisit the content whenever you need to refresh a tool." },
+];
+---
+
+<LayoutPadres title="Empowered Parents — How to help your child face bullying | Alejandra Schatzky" description="Online course for parents: how to help your child face bullying. By Alejandra Schatzky — EPI method.">
+  <NavbarPadres />
+
+  <!-- Language Floater: shows ESP flag to go back to Spanish -->
+  <a href="/" title="Volver a Español" aria-label="Volver a Español" style="position:fixed;right:24px;bottom:32px;z-index:99999;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border:1px solid rgba(0,0,0,0.10);box-shadow:0 4px 20px rgba(0,0,0,0.15);display:flex;align-items:center;justify-content:center;overflow:hidden;transition:transform 0.25s ease,box-shadow 0.25s ease;text-decoration:none;" onmouseenter="this.style.transform='scale(1.12) translateY(-3px)';this.style.boxShadow='0 8px 30px rgba(0,0,0,0.2)';" onmouseleave="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.15)';">
+    <img src="https://flagcdn.com/w80/es.png" alt="Español" style="width:100%;height:100%;object-fit:cover;border-radius:50%;display:block;" />
+  </a>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-pe" id="hero">
+      <div class="container position-relative z-2 reveal text-center">
+        <span class="badge-pe">Course for Parents · EPI Method</span>
+        <h1 class="hero-title-pe">Is your child facing <em class="text-rust">bullying</em> and you don't know how to help?</h1>
+        <p class="hero-sub-pe">Learn what to say, what to do, and how to act to protect your child without making things worse. A practical program based on the EPI method, with real tools for parents.</p>
+        <div class="d-flex flex-column align-items-center">
+          <a href="#checkout" class="btn-gold mb-4">Access the Course</a>
+          <p class="small" style="color:#6b5d48;letter-spacing:1px;"><span class="text-gold">★</span> Over 20 years working with families</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== COVER VISUAL — full-width hero image ===== -->
+    <section class="cover-hero-pe reveal">
+      <img src="/images/padres/COVER_Padres.png" alt="Empowered Parents with Alejandra Schatzky" />
+    </section>
+
+    <!-- ===== SOCIAL PROOF / STATS ===== -->
+    <section class="py-5" style="background:transparent;">
+      <div class="container py-4 reveal">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:#2a2317;">A proven method<br><em class="text-gold">for real parents</em></h2>
+            <div style="width:40px;height:1px;background:#d4a235;margin:1.2rem 0 1.5rem;"></div>
+            <p style="color:#6b5d48;font-size:1.1rem;line-height:1.8;font-weight:300;">This isn't theory. It's the EPI method — applied for over 20 years in families, schools, and companies — translated into tools that actually work at home.</p>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-4 text-center">
+              {[["7","Videos","step-by-step practical"],["3","Modules","of the EPI method"],["∞","Access","for life"]].map(([num,label,sub]) => (
+                <div class="col-sm-4">
+                  <div class="p-4 h-100 bg-white text-center" style="border:1px solid #e8dec9;border-top:2.5px solid #d4a235;border-radius:6px;box-shadow:0 2px 12px rgba(42,35,23,0.05);">
+                    <span class="d-block" style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;line-height:1;margin-bottom:0.5rem;color:#2a2317;">{num}</span>
+                    <strong class="d-block text-uppercase" style="font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:2px;color:#d4a235;margin-bottom:0.3rem;">{label}</strong>
+                    <span style="font-family:'Inter',sans-serif;font-size:0.8rem;color:#8f7f65;font-style:italic;">{sub}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROBLEM / EMOTIONAL ===== -->
+    <section class="py-5" style="background:linear-gradient(160deg,#f5ebdc 0%,#f0e3cc 100%);">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <span class="text-rust fw-bold text-uppercase small" style="letter-spacing:2px;">The Problem</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#2a2317;margin-top:1rem;">When your child comes home sad,<br/>quiet, or afraid…</h2>
+          <div style="width:40px;height:1px;background:#d4a235;margin:1.2rem auto 0;"></div>
+        </div>
+
+        <div class="reveal" style="margin-bottom:6rem;">
+          <p class="text-center" style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:#2a2317;line-height:1.6;margin:0 auto 3rem;max-width:720px;">You're not alone. Many parents try to help with <strong>well-intentioned</strong> phrases…</p>
+
+          <div class="row g-4 justify-content-center">
+            {[
+              { phrase: "Fight back", label: "Answer #1" },
+              { phrase: "Just ignore it", label: "Answer #2" },
+              { phrase: "It's normal", label: "Answer #3" },
+            ].map((p, i) => (
+              <div class="col-md-4 reveal" style={`transition-delay:${i * 100}ms`}>
+                <div class="wrong-advice-pe">
+                  <span class="wrong-tag-pe">{p.label}</span>
+                  <div class="wrong-phrase-pe">"{p.phrase}"</div>
+                  <div class="wrong-stamp-pe">Doesn't work</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="row justify-content-center reveal">
+          <div class="col-lg-10">
+            <div class="impact-card-pe">
+              <div class="impact-divider-pe">
+                <span style="background:#fff;padding:0 1rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:#a85a3f;font-size:1rem;letter-spacing:3px;text-transform:uppercase;">And worse</span>
+              </div>
+              <p class="text-center" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#2a2317;line-height:1.5;margin:2rem auto 2.5rem;max-width:650px;">This advice can make <strong>your child feel</strong>:</p>
+              <div class="feelings-row-pe">
+                {["Alone", "Misunderstood", "Guilty"].map((feeling, i) => (
+                  <div class="feeling-chip-pe reveal" style={`transition-delay:${i * 100}ms`}>
+                    <span class="feeling-text-pe">{feeling}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REALITY / EDUCATION ===== -->
+    <section class="py-5" style="background:transparent;">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <span class="text-gold fw-bold text-uppercase small" style="letter-spacing:2px;">The Reality</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:#2a2317;margin-top:1rem;">The problem isn't that you don't want to help…</h2>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:#d4a235;margin-top:1rem;">it's that <strong>no one taught you how</strong>.</p>
+          <div style="width:40px;height:1px;background:#d4a235;margin:1.5rem auto 0;"></div>
+        </div>
+
+        <div class="row g-4 justify-content-center mt-4">
+          <div class="col-md-6 reveal">
+            <div class="p-5 h-100 bg-white" style="border-radius:0.75rem;border:1px solid #e8dec9;box-shadow:0 2px 12px rgba(42,35,23,0.05);">
+              <span class="text-gold fs-3 mb-3 d-block" style="font-family:'Cormorant Garamond',serif;">01</span>
+              <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#2a2317;margin-bottom:1rem;">Kids reach out for help</h4>
+              <p style="color:#6b5d48;font-weight:300;line-height:1.7;margin:0;">when <strong>they no longer know how to solve it alone</strong>. If they spoke to you, it's because they trust you — now it depends on how you respond.</p>
+            </div>
+          </div>
+          <div class="col-md-6 reveal" style="transition-delay:100ms;">
+            <div class="p-5 h-100 bg-white" style="border-radius:0.75rem;border:1px solid #e8dec9;box-shadow:0 2px 12px rgba(42,35,23,0.05);">
+              <span class="text-gold fs-3 mb-3 d-block" style="font-family:'Cormorant Garamond',serif;">02</span>
+              <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:#2a2317;margin-bottom:1rem;">What helps most</h4>
+              <p style="color:#6b5d48;font-weight:300;line-height:1.7;margin:0;">isn't intervening — <strong>it's listening properly</strong>. And that can be learned. That changes everything.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LESSON THUMBNAILS SLIDER ===== -->
+    <section class="py-5 my-3" style="background:#f5ebdc;">
+      <div class="container py-5 reveal">
+        <div class="text-center mb-5">
+          <span class="text-gold text-uppercase small fw-bold" style="letter-spacing:2px;">The Program</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#2a2317;margin-top:1rem;">11 practical lessons</h2>
+          <div style="width:40px;height:1px;background:#d4a235;margin:1.2rem auto 1rem;"></div>
+          <p style="color:#6b5d48;font-weight:300;font-size:1.05rem;">Each lesson is under 10 minutes. Go at your own pace.</p>
+        </div>
+        <div class="slider-wrapper-pe position-relative w-100">
+          <div class="lesson-slider-pe d-flex" id="peSlider">
+            {lessonThumbs.map((thumb, i) => (
+              <div class="lesson-card-pe flex-shrink-0">
+                <div class="lesson-thumb-wrap">
+                  <img src={thumb} alt={`Lesson ${i+1}`} loading="lazy" />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div class="slider-fade-pe right"></div>
+          <div class="slider-fade-pe left"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MODULES ===== -->
+    <section class="py-5" style="background:transparent;">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <span class="text-gold fw-bold text-uppercase small" style="letter-spacing:2px;">Course Structure</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#2a2317;margin-top:1rem;">3 Modules, one clear path</h2>
+          <div style="width:40px;height:1px;background:#d4a235;margin:1.2rem auto 0;"></div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          {modules.map((mod, i) => (
+            <div class="col-md-4 reveal d-flex" style={`transition-delay:${i*100}ms`}>
+              <div class="module-card-pe w-100 bg-white">
+                <div class="module-thumb-pe">
+                  <img src={mod.thumb} alt={mod.title} loading="lazy" />
+                  <span class="module-number-pe">0{mod.n}</span>
+                </div>
+                <div class="module-body-pe p-4">
+                  <span class="text-gold text-uppercase fw-bold d-block mb-2" style="letter-spacing:1.5px;font-size:0.72rem;">Module {mod.n}</span>
+                  <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:500;color:#2a2317;margin:0 0 0.75rem;line-height:1.2;">{mod.title}</h3>
+                  <p style="color:#8f7f65;font-style:italic;font-size:0.9rem;margin:0 0 1.25rem;border-bottom:1px solid #f0e8d6;padding-bottom:1rem;">{mod.description}</p>
+                  <ul class="list-unstyled mb-0">
+                    {mod.bullets.map(b => (
+                      <li style="color:#6b5d48;font-size:0.9rem;line-height:1.6;margin-bottom:0.6rem;display:flex;align-items:start;font-weight:300;"><span style="color:#d4a235;margin-right:10px;font-size:0.8rem;margin-top:4px;">✦</span>{b}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BONUS TOOLS ===== -->
+    <section class="py-5" style="background:linear-gradient(160deg,#fbf6ec 0%,#f5ebdc 100%);">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <span class="text-rust fw-bold text-uppercase small" style="letter-spacing:2px;">Included Bonus</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#2a2317;margin-top:1rem;">Additional Tools</h2>
+          <div style="width:40px;height:1px;background:#d4a235;margin:1.2rem auto 0;"></div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          {[
+            { title: "Emotion management", text: "Concrete tools for parents and kids facing stress and frustration.", icon: "♡" },
+            { title: "Spotting negative thoughts", text: "How to recognize damaging inner dialogue before it takes hold.", icon: "◎" },
+            { title: "Breaking self-bullying", text: "Often the child becomes their own mental bully. Here you learn to break that cycle.", icon: "✦" },
+          ].map((b, i) => (
+            <div class="col-md-4 reveal d-flex" style={`transition-delay:${i*100}ms`}>
+              <div class="bonus-card-pe w-100 p-4 bg-white">
+                <div style="font-size:2rem;color:#d4a235;line-height:1;margin-bottom:1rem;">{b.icon}</div>
+                <h4 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#2a2317;margin-bottom:0.75rem;">{b.title}</h4>
+                <p style="color:#6b5d48;font-weight:300;margin:0;line-height:1.7;">{b.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRANSFORMATION ===== -->
+    <section class="py-5" style="background:transparent;">
+      <div class="container py-5">
+        <div class="text-center mb-5 reveal">
+          <span class="text-gold fw-bold text-uppercase small" style="letter-spacing:2px;">What You'll Achieve</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#2a2317;margin-top:1rem;">Your Transformation</h2>
+          <div style="width:40px;height:1px;background:#d4a235;margin:1.2rem auto 0;"></div>
+        </div>
+        <div class="row g-0 reveal" style="border-radius:8px;overflow:hidden;background:#fff;box-shadow:0 4px 30px rgba(42,35,23,0.08);">
+          <div class="col-md-6 transf-panel-pe" style="background:#f5ebdc;border-right:1px solid #e8dec9;">
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#8f7f65;margin-bottom:2rem;">Before</h3>
+            <ul class="list-unstyled">
+              {["You don't know what to say","You react badly or too late","Your child feels alone","You feel unable to protect them"].map(item => (
+                <li style="color:#8f7f65;font-size:1.05rem;margin-bottom:1.25rem;display:flex;align-items:start;font-weight:300;"><span style="opacity:0.6;margin-right:12px;">✕</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="col-md-6 transf-panel-pe" style="background:#fff;position:relative;">
+            <div style="position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(212,162,53,0.06),transparent);pointer-events:none;"></div>
+            <h3 style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:#d4a235;margin-bottom:2rem;position:relative;z-index:1;">After</h3>
+            <ul class="list-unstyled position-relative" style="z-index:1;">
+              {["You know exactly how to act","Your child feels heard","You build real trust","You reduce the impact of bullying"].map(item => (
+                <li style="color:#2a2317;font-size:1.05rem;margin-bottom:1.25rem;display:flex;align-items:start;font-weight:400;"><span style="color:#d4a235;margin-right:12px;">✦</span>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AUTHORITY / INSTRUCTOR ===== -->
+    <section class="py-5" style="background:#fff;">
+      <div class="container py-5 reveal">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mb-5 mb-lg-0">
+            <div style="aspect-ratio:1/1;background:linear-gradient(135deg,#f5ebdc 0%,#e8dec9 100%);border-radius:8px;box-shadow:0 8px 32px rgba(42,35,23,0.10);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:6rem;color:#d4a235;font-weight:300;">A·S</div>
+            <p class="text-center mt-2" style="font-size:0.75rem;color:#8f7f65;letter-spacing:1px;">Photo coming soon</p>
+          </div>
+          <div class="col-lg-7 px-lg-5">
+            <span class="text-gold text-uppercase small fw-bold" style="letter-spacing:2px;">Your Guide</span>
+            <h2 class="mb-4 mt-2" style="font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:400;color:#2a2317;">Alejandra Schatzky</h2>
+            <div style="width:60px;height:1px;background:#d4a235;margin-bottom:1.5rem;"></div>
+            <p style="font-size:1.1rem;color:#6b5d48;line-height:1.8;font-weight:300;margin-bottom:1.25rem;">Bullying specialist with <strong>over 20 years of experience</strong>. Creator of the <strong>EPI method</strong> — Education, Prevention, and Intervention — applied in families, schools, and organizations.</p>
+            <p style="color:#6b5d48;line-height:1.8;font-weight:300;margin-bottom:2rem;">Expert in interpersonal relationships and emotional management. Her approach combines clinical rigor with practical tools any parent can apply starting today.</p>
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#2a2317;font-style:italic;border-left:2px solid #d4a235;padding-left:20px;">"No one deserves to be mistreated. And no parent should feel powerless to protect their child."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRICING ===== -->
+    <section class="py-5" id="checkout">
+      <div class="container py-5 reveal">
+        <div class="text-center mb-5 pb-2">
+          <span class="text-gold text-uppercase small fw-bold" style="letter-spacing:2px;">Access</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#2a2317;margin-top:1rem;">Start Today</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="pricing-card-pe bg-white" style="border-radius:1rem;box-shadow:0 8px 40px rgba(42,35,23,0.1);border:1px solid rgba(212,162,53,0.25);overflow:hidden;">
+              <div class="pricing-left-pe p-5 d-flex flex-column justify-content-center text-center" style="background:linear-gradient(135deg,rgba(251,246,236,0.9) 0%,rgba(212,162,53,0.08) 100%);">
+                <h3 class="fw-normal mb-4 text-uppercase" style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:1px;color:#2a2317;">Lifetime Access</h3>
+                <div class="mb-4">
+                  <span style="text-decoration:line-through;color:#8f7f65;display:block;margin-bottom:0.5rem;">Was $79</span>
+                  <span class="px-3 py-1 small fw-bold text-uppercase" style="background:#a85a3f;color:#fff;letter-spacing:1px;border-radius:3px;">Launch Offer</span>
+                </div>
+                <div class="d-flex justify-content-center align-items-baseline mb-4" style="line-height:1;">
+                  <span style="color:#8f7f65;font-weight:bold;margin-right:0.5rem;font-size:1.25rem;">USD</span>
+                  <span style="font-family:'Cormorant Garamond',serif;font-size:5.5rem;letter-spacing:-3px;font-weight:300;color:#2a2317;">39</span>
+                </div>
+                <a href="#" class="btn-gold d-block py-3 text-center js-enroll-btn" data-original-text="Access the Course &nbsp;→" style="font-size:1rem;">Access the Course &nbsp;→</a>
+                <p class="text-danger small mt-2 mb-0 js-enroll-error" style="display:none;font-size:0.8rem;"></p>
+                <div class="mt-4 pt-3 d-flex flex-column align-items-center gap-2" style="border-top:1px solid rgba(42,35,23,0.06);">
+                  <p class="small text-uppercase mb-0" style="font-size:0.70rem;font-weight:600;color:#8f7f65;">100% Secure & Encrypted</p>
+                  <span style="font-size:0.8rem;opacity:0.5;">🔒 💳 🛡️</span>
+                </div>
+              </div>
+              <div class="pricing-right-pe p-5 d-flex flex-column justify-content-center" style="border-top:1px solid rgba(42,35,23,0.05);">
+                <h5 class="mb-4 text-uppercase pb-3" style="font-size:0.9rem;letter-spacing:1px;color:#2a2317;border-bottom:1px solid rgba(42,35,23,0.08);">What's Included:</h5>
+                <ul class="list-unstyled mb-0 d-flex flex-column gap-3">
+                  {["3 complete practical modules","7 step-by-step guided videos","Downloadable guides applicable today","Exercises to use at home","EPI method based on research","Certificate upon completion","Lifetime access from any device"].map(f => (
+                    <li class="d-flex align-items-start">
+                      <span class="me-3 mt-1" style="color:#d4a235;font-size:1.2rem;">✓</span>
+                      <span style="color:#6b5d48;font-weight:300;font-size:1.05rem;">{f}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="py-5" style="background:transparent;">
+      <div class="container py-5 reveal" style="max-width:800px;margin:0 auto;">
+        <div class="text-center mb-5">
+          <span class="text-gold fw-bold text-uppercase small" style="letter-spacing:2px;">FAQ</span>
+          <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:400;color:#2a2317;margin-top:1rem;">Frequently Asked Questions</h2>
+          <div style="width:40px;height:1px;background:#d4a235;margin:1.2rem auto 0;"></div>
+        </div>
+        <div style="border:1px solid #e8dec9;border-radius:1rem;overflow:hidden;box-shadow:0 2px 12px rgba(42,35,23,0.05);">
+          {faqs.map((faq, i) => (
+            <details class="faq-item-pe bg-white" name="faq-pe" open={i===0}>
+              <summary class="px-4 py-4 d-flex justify-content-between align-items-center" style="cursor:pointer;list-style:none;">
+                <span style="font-size:1.05rem;font-weight:400;color:#2a2317;">{faq.q}</span>
+                <span style="color:#d4a235;font-size:1.4rem;line-height:1;">+</span>
+              </summary>
+              <div class="px-4 pb-4 bg-white">
+                <p style="color:#6b5d48;font-weight:300;line-height:1.8;margin:0;">{faq.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EMOTIONAL CLOSE ===== -->
+    <section class="py-5" style="background:linear-gradient(160deg,#f5ebdc 0%,#f0e3cc 100%);">
+      <div class="container py-5 reveal text-center" style="max-width:800px;">
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:400;color:#2a2317;line-height:1.3;margin-bottom:2rem;">Your child doesn't need you to have all the answers…</h2>
+        <div class="d-flex flex-column gap-3 mb-5" style="align-items:center;">
+          {["they need to feel you're there","they need to feel understood","they need real tools"].map(line => (
+            <p style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:#d4a235;margin:0;">{line}</p>
+          ))}
+        </div>
+        <p style="color:#6b5d48;font-size:1.15rem;line-height:1.8;font-weight:300;margin-bottom:2.5rem;">And that's exactly what this course teaches you.</p>
+        <a href="#checkout" class="btn-gold">Enroll Now &nbsp;→</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="py-5" style="background:#fff;border-top:1px solid rgba(212,162,53,0.15);">
+    <div class="container py-4">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="mb-1 d-inline-flex align-items-center" style="gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;letter-spacing:3px;color:#2a2317;font-weight:500;text-transform:uppercase;">COEXPACE</span>
+            <span style="width:1px;height:22px;background:#d4a235;opacity:0.5;"></span>
+            <span style="font-family:'Inter',sans-serif;font-size:0.85rem;letter-spacing:3px;color:#6b5d48;font-weight:600;text-transform:uppercase;">Generación <span style="color:#d4a235;">EPI</span></span>
+          </p>
+          <p class="mb-0 small mt-2" style="color:#8f7f65;font-weight:300;">With Alejandra Schatzky · EPI Method</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <p class="mb-0 small" style="color:#8f7f65;letter-spacing:1px;">© {new Date().getFullYear()} COEXPACE. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</LayoutPadres>
+
+<style is:global>
+  /* ===== HERO ===== */
+  .hero-pe {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 7rem 0 3rem;
+    background: radial-gradient(ellipse at top, rgba(212,162,53,0.08) 0%, transparent 60%), linear-gradient(180deg, #fbf6ec 0%, #f5ebdc 100%);
+    overflow: hidden;
+  }
+
+  /* ===== COVER VISUAL — full width ===== */
+  .cover-hero-pe {
+    width: 100%;
+    line-height: 0;
+  }
+  .cover-hero-pe img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* ===== WRONG ADVICE CARDS (problem section) ===== */
+  .wrong-advice-pe {
+    position: relative;
+    background: #fff;
+    border: 1px solid #e8dec9;
+    border-radius: 0.9rem;
+    padding: 2.25rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .wrong-advice-pe::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: #a85a3f;
+    opacity: 0.4;
+  }
+  .wrong-advice-pe:hover {
+    border-color: rgba(168,90,63,0.3);
+    box-shadow: 0 8px 28px rgba(168,90,63,0.12);
+    transform: translateY(-3px);
+  }
+  .wrong-tag-pe {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: #a85a3f;
+    background: rgba(168,90,63,0.08);
+    padding: 4px 12px;
+    border-radius: 3px;
+  }
+  .wrong-phrase-pe {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-style: italic;
+    color: #2a2317;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .wrong-stamp-pe {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #a85a3f;
+    border: 1.5px solid #a85a3f;
+    padding: 4px 10px;
+    display: inline-block;
+    border-radius: 3px;
+    opacity: 0.85;
+  }
+
+  /* ===== BONUS CARDS ===== */
+  .bonus-card-pe {
+    border-radius: 0.75rem;
+    border: 1px solid #e8dec9;
+    box-shadow: 0 2px 12px rgba(42,35,23,0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .bonus-card-pe:hover {
+    border-color: rgba(212,162,53,0.35);
+    box-shadow: 0 8px 24px rgba(212,162,53,0.1);
+    transform: translateY(-3px);
+  }
+
+  /* ===== IMPACT CARD (feelings) ===== */
+  .impact-card-pe {
+    background: #fff;
+    border: 1px solid #e8dec9;
+    border-radius: 1rem;
+    padding: 3rem 2rem 2.5rem;
+    box-shadow: 0 8px 32px rgba(42,35,23,0.08);
+    position: relative;
+  }
+  .impact-divider-pe {
+    position: relative;
+    text-align: center;
+    margin-top: -3rem;
+  }
+  .impact-divider-pe::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(168,90,63,0.3), transparent);
+    z-index: 0;
+  }
+  .impact-divider-pe > span {
+    position: relative;
+    z-index: 1;
+  }
+  .feelings-row-pe {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .feeling-chip-pe {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #fbf6ec 0%, #f5ebdc 100%);
+    border: 1.5px solid rgba(168,90,63,0.25);
+    padding: 0.85rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+  }
+  .feeling-chip-pe:hover {
+    border-color: rgba(168,90,63,0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(168,90,63,0.12);
+  }
+  .feeling-text-pe {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #2a2317;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  .hero-title-pe {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #2a2317;
+    text-shadow: 0 4px 15px rgba(255,255,255,0.8);
+    margin: 1.5rem auto 1.5rem;
+    max-width: 900px;
+  }
+  .hero-sub-pe {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.15rem;
+    color: #6b5d48;
+    line-height: 1.8;
+    max-width: 680px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+  }
+  .badge-pe {
+    letter-spacing: 3px;
+    color: #d4a235;
+    border: 1px solid #d4a235;
+    padding: 6px 14px;
+    background: rgba(255,255,255,0.7);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .module-card-pe {
+    border-radius: 0.9rem;
+    border: 1px solid #e8dec9;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(42,35,23,0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .module-body-pe {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .module-card-pe:hover {
+    border-color: rgba(212,162,53,0.4);
+    box-shadow: 0 10px 30px rgba(212,162,53,0.12);
+    transform: translateY(-4px);
+  }
+  .module-thumb-pe {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #f5ebdc;
+  }
+  .module-thumb-pe img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .module-number-pe {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    background: rgba(42,35,23,0.75);
+    color: #d4a235;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    padding: 2px 10px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    letter-spacing: 2px;
+  }
+
+  .slider-wrapper-pe {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .lesson-slider-pe {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 1rem;
+    padding: 0.5rem 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .lesson-slider-pe::-webkit-scrollbar { display: none; }
+  .lesson-card-pe {
+    flex: 0 0 320px;
+    scroll-snap-align: center;
+  }
+  .lesson-thumb-wrap {
+    aspect-ratio: 16/9;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(42,35,23,0.10);
+    transition: all 0.3s ease;
+  }
+  .lesson-thumb-wrap:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(42,35,23,0.18);
+  }
+  .lesson-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .slider-fade-pe {
+    position: absolute;
+    top: 0; height: 100%; width: 50px;
+    pointer-events: none; z-index: 2;
+  }
+  .slider-fade-pe.right { right: 0; background: linear-gradient(to right, rgba(245,235,220,0), rgba(245,235,220,1)); }
+  .slider-fade-pe.left  { left:  0; background: linear-gradient(to left,  rgba(245,235,220,0), rgba(245,235,220,1)); }
+
+  .transf-panel-pe { padding: 60px 50px; }
+
+  .pricing-card-pe {
+    display: flex;
+    flex-direction: column;
+  }
+  .pricing-left-pe { flex: none; }
+  .pricing-right-pe { flex: 1; border-left: none; }
+  @media (min-width: 768px) {
+    .pricing-card-pe { flex-direction: row; }
+    .pricing-left-pe { flex: 0 0 42%; }
+    .pricing-right-pe {
+      flex: 1;
+      border-left: 1px solid rgba(42,35,23,0.05);
+      border-top: none;
+    }
+  }
+
+  .faq-item-pe {
+    border-bottom: 1px solid rgba(42,35,23,0.05);
+  }
+  .faq-item-pe:last-child { border-bottom: none; }
+  .faq-item-pe summary { list-style: none; }
+  .faq-item-pe summary::-webkit-details-marker { display: none; }
+  .faq-item-pe[open] { background: #fbf6ec !important; }
+  .faq-item-pe[open] summary { color: #d4a235; }
+
+  @media (max-width: 767px) {
+    .hero-pe { min-height: auto; align-items: center; padding: 6rem 0 2.5rem; }
+    .hero-title-pe { font-size: 2.3rem; margin: 1rem 0 0.75rem; }
+    .hero-sub-pe { font-size: 0.95rem; margin-bottom: 2rem; padding: 0 0.5rem; }
+    .badge-pe { font-size: 0.65rem; letter-spacing: 2px; }
+
+    section.py-5 { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+    section.py-5.my-3 { margin: 0 !important; }
+    .container.py-5 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+
+    .col-sm-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+    .col-sm-4 .p-4 { padding: 0.75rem 0.5rem !important; }
+    .col-sm-4 span[style*="3.5rem"] { font-size: 2rem !important; }
+    .col-sm-4 strong { font-size: 0.6rem !important; letter-spacing: 1px !important; }
+
+    .p-5 { padding: 1.75rem 1.25rem !important; }
+
+    .wrong-advice-pe { padding: 1.75rem 1rem; gap: 1rem; }
+    .wrong-phrase-pe { font-size: 1.6rem; }
+    .impact-card-pe { padding: 2.5rem 1.25rem 2rem; }
+    .feeling-chip-pe { padding: 0.7rem 1.4rem; }
+    .feeling-text-pe { font-size: 1.05rem; }
+
+    .transf-panel-pe { padding: 1.75rem 1.25rem !important; text-align: center; }
+    .transf-panel-pe ul { display: inline-block; text-align: left; }
+    .transf-panel-pe h3 { margin-bottom: 1.5rem !important; }
+
+    .lesson-card-pe { flex: 0 0 75vw; }
+
+    .pricing-card-pe .p-5,
+    .pricing-left-pe.p-5,
+    .pricing-right-pe.p-5 { padding: 1.75rem 1.25rem !important; }
+    .pricing-card-pe [style*="5.5rem"] { font-size: 4rem !important; }
+
+    .faq-item-pe summary { padding: 1rem 1.25rem !important; }
+    .faq-item-pe .px-4 { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+
+    h2[style*="2.8rem"] { font-size: 1.85rem !important; }
+    h2[style*="2.5rem"] { font-size: 1.7rem !important; }
+    h2[style*="3.5rem"] { font-size: 2rem !important; }
+    h2[style*="4.5rem"] { font-size: 2.3rem !important; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('peSlider');
+    if (!slider) return;
+    let isHovering = false;
+    slider.addEventListener('mouseenter', () => { isHovering = true; });
+    slider.addEventListener('mouseleave', () => { isHovering = false; });
+    slider.addEventListener('touchstart', () => { isHovering = true; }, { passive: true });
+    slider.addEventListener('touchend', () => { setTimeout(() => { isHovering = false; }, 2000); }, { passive: true });
+    const cardWidth = () => window.innerWidth <= 768 ? 300 : 340;
+    setInterval(() => {
+      if (isHovering) return;
+      if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 10) {
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: cardWidth(), behavior: 'smooth' });
+      }
+    }, 3500);
+  });
+</script>
+
+<script define:vars={{ apiUrl, courseId }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.js-enroll-btn');
+    const errorEl = document.querySelector('.js-enroll-error');
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        if (btn.dataset.loading === '1') return;
+
+        if (!courseId || courseId === 0) {
+          if (errorEl) {
+            errorEl.textContent = 'The course is not available yet. Please check back soon.';
+            errorEl.style.display = 'block';
+          }
+          return;
+        }
+
+        if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
+        btn.dataset.loading = '1';
+        btn.style.pointerEvents = 'none';
+        btn.style.opacity = '0.75';
+        btn.innerHTML = 'Processing…';
+
+        try {
+          const res = await fetch(`${apiUrl}/api/payments/guest-checkout-session`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ course_id: courseId }),
+          });
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          if (!data.checkout_url) throw new Error('Invalid server response.');
+          window.location.href = data.checkout_url;
+        } catch (err) {
+          console.error('[enroll]', err);
+          btn.dataset.loading = '';
+          btn.style.pointerEvents = '';
+          btn.style.opacity = '';
+          btn.innerHTML = btn.dataset.originalText || 'Access the Course →';
+          if (errorEl) {
+            errorEl.textContent = "We couldn't start the payment. Please try again in a few seconds.";
+            errorEl.style.display = 'block';
+          }
+        }
+      });
+    });
+  });
+</script>

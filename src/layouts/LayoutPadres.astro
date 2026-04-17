@@ -1,0 +1,67 @@
+---
+import '../styles/padres-global.scss';
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = 'Curso online para padres: cómo ayudar a tu hij@ frente al bullying. Por Alejandra Schatzky — método EPI.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body style="background-color: #fbf6ec; color: #2a2317;">
+		<slot />
+
+		<script is:inline>
+			(function () {
+				var html = document.documentElement;
+				html.classList.add('js-reveal-ready');
+
+				function activateAll() {
+					var els = document.querySelectorAll('.reveal');
+					for (var i = 0; i < els.length; i++) els[i].classList.add('active');
+				}
+
+				var failsafe = setTimeout(activateAll, 2500);
+
+				function init() {
+					if (!('IntersectionObserver' in window)) { activateAll(); return; }
+					var observer = new IntersectionObserver(function (entries, obs) {
+						entries.forEach(function (entry) {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('active');
+								obs.unobserve(entry.target);
+							}
+						});
+					}, { root: null, rootMargin: '0px', threshold: 0.15 });
+
+					document.querySelectorAll('.reveal').forEach(function (el) {
+						observer.observe(el);
+					});
+				}
+
+				if (document.readyState === 'loading') {
+					document.addEventListener('DOMContentLoaded', init);
+				} else {
+					init();
+				}
+
+				window.addEventListener('load', function () { clearTimeout(failsafe); });
+			})();
+		</script>
+	</body>
+</html>
