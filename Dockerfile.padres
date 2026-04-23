@@ -4,9 +4,7 @@ WORKDIR /app
 
 # Build-time public env vars (Astro inlines PUBLIC_* at build time)
 ARG PUBLIC_API_URL
-ARG PUBLIC_PADRES_COURSE_ID
 ENV PUBLIC_API_URL=$PUBLIC_API_URL
-ENV PUBLIC_PADRES_COURSE_ID=$PUBLIC_PADRES_COURSE_ID
 
 COPY package*.json ./
 RUN npm ci

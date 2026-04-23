@@ -3,7 +3,7 @@ import LayoutPadres from '../../../layouts/LayoutPadres.astro';
 import NavbarPadres from '../../../components/NavbarPadres.astro';
 
 const apiUrl = import.meta.env.PUBLIC_API_URL || 'https://api-courses.coexpace.org';
-const courseId = Number(import.meta.env.PUBLIC_PADRES_COURSE_ID || 0);
+const courseId = 15;
 
 const modules = [
   {
@@ -818,14 +818,6 @@ const faqs = [
       btn.addEventListener('click', async (e) => {
         e.preventDefault();
         if (btn.dataset.loading === '1') return;
-
-        if (!courseId || courseId === 0) {
-          if (errorEl) {
-            errorEl.textContent = 'The course is not available yet. Please check back soon.';
-            errorEl.style.display = 'block';
-          }
-          return;
-        }
 
         if (errorEl) { errorEl.style.display = 'none'; errorEl.textContent = ''; }
         btn.dataset.loading = '1';
